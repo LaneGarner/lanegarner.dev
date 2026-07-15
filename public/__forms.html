@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify form definitions</title>
+  </head>
+  <body>
+    <!--
+      Static form definition for Netlify Forms (Next.js App Router pattern):
+      Netlify's build-time crawler reads this file to register the form; the
+      React form at /contact does a fetch POST to /__forms.html with an
+      application/x-www-form-urlencoded body including form-name=contact.
+      https://docs.netlify.com/forms/setup/
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

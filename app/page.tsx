@@ -1,0 +1,154 @@
+import Image from "next/image";
+import Link from "next/link";
+import { CardHeader } from "@/components/tutti";
+import { TypingText } from "@/components/site/typing-text";
+import { RotatingWord } from "@/components/site/rotating-word";
+import {
+  SurfaceCard,
+  SurfaceCardTitle,
+  SurfaceCardDescription,
+} from "@/components/site/surface-card";
+import { WorkGrid } from "@/components/site/work-grid";
+import { WaveEdge } from "@/components/site/wave-edge";
+
+const HomePage = () => {
+  return (
+    <div className="mx-auto w-full max-w-5xl px-4 sm:px-6">
+      <section
+        aria-label="Introduction"
+        className="flex min-h-[70vh] flex-wrap items-center justify-center gap-8 py-12 sm:gap-12"
+      >
+        <div className="shrink-0">
+          <div className="relative h-72 w-72 overflow-hidden rounded-full sm:h-[375px] sm:w-[375px]">
+            <Image
+              src="/profilePic.jpg"
+              alt="Photo of Lane Garner"
+              fill
+              sizes="(min-width: 640px) 375px, 288px"
+              priority
+              className="object-cover"
+            />
+          </div>
+        </div>
+        <div className="flex max-w-xl flex-col">
+          <p className="mb-4 text-6xl font-extrabold leading-tight sm:text-7xl">
+            <TypingText text="Hello." />
+          </p>
+          <p className="mb-6 text-xl font-light leading-tight sm:text-3xl">
+            <span className="font-extrabold">I&apos;m Lane Garner</span>,
+            <br /> a design-focused frontend
+            <br /> software engineer based
+            <br /> in Austin, Texas.
+          </p>
+          <p className="w-fit rounded-sm bg-chrome px-4 py-3 text-lg text-accent-cool">
+            My specialty is the<br/> front of the frontend.
+            <br />
+            <Link
+              href="/work"
+              className="font-bold text-accent underline underline-offset-2"
+            >
+              See my work.
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* Full-bleed dark band, carried over from the old site's "Work with
+          me" divider. Wave top edge curving up toward the top right; the
+          band stays dark in both themes like the original. */}
+      <section
+        aria-label="What I build"
+        className="relative left-1/2 w-screen -translate-x-1/2"
+      >
+        <WaveEdge edge="top" />
+        <div className="flex flex-col items-center gap-6 bg-chrome px-4 py-16 text-center text-chrome-ink">
+          <p className="text-3xl font-bold sm:text-6xl">I build</p>
+          <p className="text-4xl font-extrabold sm:text-7xl">
+            <RotatingWord />
+          </p>
+          <p className="text-3xl font-bold leading-tight sm:text-6xl">
+            interfaces
+            <br /> and
+            <br /> design systems
+          </p>
+        </div>
+        <WaveEdge edge="bottom" />
+      </section>
+
+      <section aria-label="What I do" className="py-12">
+        <h2 className="mb-8 text-center text-3xl font-extrabold">What I do</h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          <SurfaceCard>
+            <CardHeader>
+              <SurfaceCardTitle>Design systems</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                Design tokens and components that survive contact with more
+                than one platform. This site runs on tutti-ui, my React +
+                React Native system.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+          <SurfaceCard>
+            <CardHeader>
+              <SurfaceCardTitle>Product engineering</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                I build and ship whole products, backend included.
+                GarnerGuitar.com has paying students; Rhythm Fit works in a
+                basement gym with no signal.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+          <SurfaceCard>
+            <CardHeader>
+              <SurfaceCardTitle>Accessible craft</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                Semantic HTML, keyboard-first interactions, WCAG 2.2 AA.
+                Controls should look like what they do and answer every
+                action with feedback. If the focus order is wrong, the work
+                isn&apos;t done.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+        </div>
+      </section>
+
+      <section aria-label="Side projects" className="py-12">
+        <h2 className="mb-4 text-center text-3xl font-extrabold">
+          Side Projects
+        </h2>
+        <p className="mx-auto mb-10 max-w-2xl text-center text-lg font-light text-ink-soft">
+          Passion projects, built nights and weekends because I wanted them to
+          exist. Some solve my own problems, like a workout app that works in
+          a basement gym with no signal. Others are things I wanted to own end
+          to end, like a design system that ships to web and native from one
+          set of tokens. Each card links to a write-up with the decisions
+          behind the build.
+        </p>
+        <WorkGrid />
+      </section>
+
+      <section
+        aria-label="Background"
+        className="mx-auto max-w-2xl py-16 text-center"
+      >
+        <p className="mb-6 text-xl font-light leading-relaxed sm:text-2xl">
+          My work is design focused, and my background as a{" "}
+          <span className="font-semibold underline decoration-accent decoration-4 underline-offset-4">
+            musician
+          </span>{" "}
+          inspires creativity throughout the development process.
+        </p>
+        <p>
+          <Link
+            href="/about"
+            className="font-bold text-ink-soft underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet dark:text-ink"
+          >
+            Read the story
+          </Link>
+        </p>
+      </section>
+    </div>
+  );
+};
+
+export default HomePage;
