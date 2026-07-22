@@ -118,7 +118,9 @@ const HomePage = () => {
                 Semantic HTML, keyboard-first interactions, WCAG 2.2 AA.
                 Controls should look like what they do and answer every
                 action with feedback. If the focus order is wrong, the work
-                isn&apos;t done.
+                isn&apos;t done. Accessibility issues are usually usability
+                issues in disguise&mdash;fixing them makes the product better
+                for everyone.
               </SurfaceCardDescription>
             </CardHeader>
           </SurfaceCard>
