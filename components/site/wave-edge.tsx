@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 
 interface WaveEdgeProps {
   edge: "top" | "bottom";
+  fillClassName?: string;
 }
 
 /**
@@ -40,17 +41,20 @@ const buildBottom = (p: number) =>
 const EDGES = {
   top: {
     viewBox: "0 0 1440 90",
-    className: "block h-14 w-full fill-chrome sm:h-20",
+    className: "block h-14 w-full sm:h-20",
     build: buildTop,
   },
   bottom: {
     viewBox: "0 0 1440 70",
-    className: "block h-10 w-full fill-chrome sm:h-14",
+    className: "block h-10 w-full sm:h-14",
     build: buildBottom,
   },
 } as const;
 
-export const WaveEdge = ({ edge }: WaveEdgeProps) => {
+export const WaveEdge = ({
+  edge,
+  fillClassName = "fill-chrome",
+}: WaveEdgeProps) => {
   const pathRef = useRef<SVGPathElement>(null);
   const { viewBox, className, build } = EDGES[edge];
 
@@ -78,7 +82,7 @@ export const WaveEdge = ({ edge }: WaveEdgeProps) => {
       aria-hidden="true"
       viewBox={viewBox}
       preserveAspectRatio="none"
-      className={className}
+      className={`${className} ${fillClassName}`}
     >
       <path ref={pathRef} d={build(0)} />
     </svg>
