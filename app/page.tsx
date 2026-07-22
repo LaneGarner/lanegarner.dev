@@ -10,6 +10,7 @@ import {
 } from "@/components/site/surface-card";
 import { AIDemo } from "@/components/site/ai-demo";
 import { WorkGrid } from "@/components/site/work-grid";
+import { WaveBandReveal } from "@/components/site/wave-band-reveal";
 import { WaveEdge } from "@/components/site/wave-edge";
 
 const HomePage = () => {
@@ -64,15 +65,19 @@ const HomePage = () => {
       >
         <WaveEdge edge="top" />
         <div className="flex flex-col items-center gap-6 bg-chrome px-4 py-16 text-center text-chrome-ink">
-          <p className="text-3xl font-bold sm:text-6xl">I build</p>
+          <WaveBandReveal>
+            <p className="text-3xl font-bold sm:text-6xl">I build</p>
+          </WaveBandReveal>
           <p className="text-4xl font-extrabold sm:text-7xl">
             <RotatingWord />
           </p>
-          <div className="text-3xl font-bold leading-tight sm:text-6xl flex flex-col gap-0">
-            <span>interfaces</span>
-            <span>and</span>
-            <span>design systems</span>
-          </div>
+          <WaveBandReveal className="delay-150">
+            <div className="text-3xl font-bold leading-tight sm:text-6xl flex flex-col gap-0">
+              <span>interfaces</span>
+              <span>and</span>
+              <span>systems</span>
+            </div>
+          </WaveBandReveal>
         </div>
         <WaveEdge edge="bottom" />
       </section>
