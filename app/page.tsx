@@ -8,6 +8,7 @@ import {
   SurfaceCardTitle,
   SurfaceCardDescription,
 } from "@/components/site/surface-card";
+import { AIDemo } from "@/components/site/ai-demo";
 import { WorkGrid } from "@/components/site/work-grid";
 import { WaveEdge } from "@/components/site/wave-edge";
 
@@ -77,7 +78,7 @@ const HomePage = () => {
 
       <section aria-label="What I do" className="py-12">
         <h2 className="mb-8 text-center text-3xl font-extrabold">What I do</h2>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           <SurfaceCard>
             <CardHeader>
               <SurfaceCardTitle>Design systems</SurfaceCardTitle>
@@ -100,6 +101,17 @@ const HomePage = () => {
           </SurfaceCard>
           <SurfaceCard>
             <CardHeader>
+              <SurfaceCardTitle>AI-native interfaces</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                Streaming output, tool calls rendered as real UI, honest
+                fallbacks. Rhythm Fit&apos;s coach streams NDJSON into
+                scheduled workouts; Tribe Tracker drops to deterministic
+                stats when the model fails.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+          <SurfaceCard>
+            <CardHeader>
               <SurfaceCardTitle>Accessible craft</SurfaceCardTitle>
               <SurfaceCardDescription>
                 Semantic HTML, keyboard-first interactions, WCAG 2.2 AA.
@@ -110,6 +122,27 @@ const HomePage = () => {
             </CardHeader>
           </SurfaceCard>
         </div>
+      </section>
+
+      <section aria-label="AI interface demo" className="py-12">
+        <h2 className="mb-4 text-center text-3xl font-extrabold">
+          AI is an interface problem
+        </h2>
+        <p className="mx-auto mb-10 max-w-2xl text-center text-lg font-light text-ink-soft">
+          A canned exchange, no model behind it. The rendering is real:
+          tutti-ui&apos;s AgentWorkflow and StreamingText, the same components
+          documented in the{" "}
+          <a
+            href="https://lanegarner.github.io/tutti-ui/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-ink underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet"
+          >
+            Storybook
+          </a>
+          .
+        </p>
+        <AIDemo />
       </section>
 
       <section aria-label="Side projects" className="py-12">
