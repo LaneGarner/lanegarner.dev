@@ -167,6 +167,28 @@ const HomePage = () => {
         <AIDemo />
       </section>
 
+      <section aria-label="AI beyond chat" className="py-12">
+        <h2 className="mb-4 text-center text-3xl font-extrabold">
+          AI without the chat box
+        </h2>
+        <div className="mx-auto flex max-w-2xl flex-col gap-4 text-center text-lg font-light text-ink-soft">
+          <p>
+            AI doesn&apos;t have to be a conversation. In Rhythm Fit,
+            onboarding feeds structured tool-calling and a personalized
+            multi-week training plan lands directly on the calendar&mdash;
+            equipment-filtered, injury-aware, no chat window anywhere.
+            Streaks, PRs, and stalled lifts flow from analytics into the
+            model, so coaching is proactive, not prompted.
+          </p>
+          <p>
+            Tribe Tracker works the same way: a short survey matches you to
+            the right challenge, a coach reads your check-ins and streaks to
+            tell you what to do this week, and a weekly digest lands in your
+            tribe&apos;s chat on its own.
+          </p>
+        </div>
+      </section>
+
       <section aria-label="Side projects" className="py-12">
         <h2 className="mb-4 text-center text-3xl font-extrabold">
           Side Projects
