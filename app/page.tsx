@@ -35,22 +35,23 @@ const HomePage = () => {
           <p className="mb-4 text-6xl font-extrabold leading-tight sm:text-7xl">
             <TypingText text="Hello." />
           </p>
-          <p className="mb-6 text-xl font-light leading-tight sm:text-3xl">
-            <span className="font-extrabold">I&apos;m Lane Garner</span>,
-            <br /> a design-focused frontend
-            <br /> software engineer based
-            <br /> in Austin, Texas.
-          </p>
-          <p className="w-fit rounded-sm bg-chrome px-4 py-3 text-lg text-accent-cool">
-            My specialty is the<br/> front of the frontend.
-            <br />
-            <Link
-              href="/work"
-              className="font-bold text-accent underline underline-offset-2"
-            >
-              See my work.
-            </Link>
-          </p>
+          <div className="mb-6 flex flex-col gap-1 text-xl font-light leading-tight sm:text-3xl">
+            <span className="font-extrabold">I&apos;m Lane Garner,</span>
+            <span>a design-focused frontend</span>
+            <span>software engineer based</span>
+            <span>in Austin, Texas.</span>
+          </div>
+          <div className="w-fit rounded-sm bg-chrome px-4 py-3 text-lg text-accent-cool">
+            <div className="flex flex-col gap-2">
+              <span>My specialty is the front of the frontend.</span>
+              <Link
+                href="/work"
+                className="font-bold text-accent underline underline-offset-2"
+              >
+                See my work.
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -67,11 +68,11 @@ const HomePage = () => {
           <p className="text-4xl font-extrabold sm:text-7xl">
             <RotatingWord />
           </p>
-          <p className="text-3xl font-bold leading-tight sm:text-6xl">
-            interfaces
-            <br /> and
-            <br /> design systems
-          </p>
+          <div className="text-3xl font-bold leading-tight sm:text-6xl flex flex-col gap-0">
+            <span>interfaces</span>
+            <span>and</span>
+            <span>design systems</span>
+          </div>
         </div>
         <WaveEdge edge="bottom" />
       </section>

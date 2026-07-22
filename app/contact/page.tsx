@@ -12,11 +12,10 @@ const ContactPage = () => {
       <h1 className="mb-4 text-center text-4xl font-extrabold sm:text-5xl">
         Contact
       </h1>
-      <p className="mb-10 text-center text-lg font-light text-ink-soft">
+      <div className="mb-10 flex flex-col gap-2 text-center text-lg font-light text-ink-soft">
         <span className="font-bold">Want to get in touch?</span>
-        <br />
-        Use the form below and I&apos;ll get back to you.
-      </p>
+        <span>Use the form below and I&apos;ll get back to you.</span>
+      </div>
 
       <ContactForm />
     </div>
