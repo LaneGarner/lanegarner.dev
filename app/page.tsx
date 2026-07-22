@@ -121,6 +121,17 @@ const HomePage = () => {
           </SurfaceCard>
           <SurfaceCard>
             <CardHeader>
+              <SurfaceCardTitle>Usability</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                Don Norman is my north star: signifiers that invite the right
+                action, feedback that answers it, mappings and constraints
+                that make the wrong action hard. If users need the manual,
+                the conceptual model failed.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+          <SurfaceCard className="md:col-span-2">
+            <CardHeader>
               <SurfaceCardTitle>Accessible craft</SurfaceCardTitle>
               <SurfaceCardDescription>
                 Semantic HTML, keyboard-first interactions, WCAG 2.2 AA.
