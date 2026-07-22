@@ -286,3 +286,19 @@ body {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
+
+/* Accent underline that sweeps in left-to-right on hover of the nearest
+   `group` ancestor (same marker treatment as the highlighter). */
+.sweep-underline {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-size: 0% 4px;
+  background-position: 0 100%;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-size 0.25s ease-out;
+}
+.group:hover .sweep-underline,
+.group:focus-visible .sweep-underline {
+  background-size: 100% 4px;
+}
