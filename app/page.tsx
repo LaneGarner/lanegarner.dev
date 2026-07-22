@@ -85,8 +85,16 @@ const HomePage = () => {
               <SurfaceCardTitle>Design systems</SurfaceCardTitle>
               <SurfaceCardDescription>
                 Design tokens and components that survive contact with more
-                than one platform. This site runs on tutti-ui, my React +
-                React Native system.
+                than one platform. This site runs on{" "}
+                <a
+                  href="https://github.com/LaneGarner/tutti-ui"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-ink underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet"
+                >
+                  tutti-ui
+                </a>
+                , my React + React Native system.
               </SurfaceCardDescription>
             </CardHeader>
           </SurfaceCard>
