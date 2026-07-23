@@ -103,45 +103,6 @@ const HomePage = () => {
         <div className="grid auto-rows-fr gap-6 md:grid-cols-2">
           <SurfaceCard>
             <CardHeader>
-              <SurfaceCardTitle>Design systems</SurfaceCardTitle>
-              <SurfaceCardDescription>
-                Design tokens and components that survive contact with more
-                than one platform. This site runs on{" "}
-                <a
-                  href="https://github.com/LaneGarner/tutti-ui"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-ink underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet"
-                >
-                  tutti-ui
-                </a>
-                , my React + React Native system.
-              </SurfaceCardDescription>
-            </CardHeader>
-          </SurfaceCard>
-          <SurfaceCard>
-            <CardHeader>
-              <SurfaceCardTitle>Product engineering</SurfaceCardTitle>
-              <SurfaceCardDescription>
-                I build and ship whole products, backend included.
-                GarnerGuitar.com has paying students; Rhythm Fit works in a
-                basement gym with no signal.
-              </SurfaceCardDescription>
-            </CardHeader>
-          </SurfaceCard>
-          <SurfaceCard>
-            <CardHeader>
-              <SurfaceCardTitle>AI-native interfaces</SurfaceCardTitle>
-              <SurfaceCardDescription>
-                Streaming output, tool calls rendered as real UI, honest
-                fallbacks. Rhythm Fit&apos;s coach streams NDJSON into
-                scheduled workouts; Tribe Tracker drops to deterministic
-                stats when the model fails.
-              </SurfaceCardDescription>
-            </CardHeader>
-          </SurfaceCard>
-          <SurfaceCard>
-            <CardHeader>
               <SurfaceCardTitle>Usability</SurfaceCardTitle>
               <SurfaceCardDescription>
                 Don Norman is my north star: signifiers that invite the right
@@ -161,6 +122,45 @@ const HomePage = () => {
                 isn&apos;t done. Accessibility issues are usually usability
                 issues in disguise. Fixing them makes the product better
                 for everyone.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+          <SurfaceCard>
+            <CardHeader>
+              <SurfaceCardTitle>Product engineering</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                I build and ship whole products, backend included.
+                GarnerGuitar.com has paying students; Rhythm Fit works in a
+                basement gym with no signal.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+          <SurfaceCard>
+            <CardHeader>
+              <SurfaceCardTitle>Design systems</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                Design tokens and components that survive contact with more
+                than one platform. This site runs on{" "}
+                <a
+                  href="https://github.com/LaneGarner/tutti-ui"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-ink underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet"
+                >
+                  tutti-ui
+                </a>
+                , my React + React Native system.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+          <SurfaceCard>
+            <CardHeader>
+              <SurfaceCardTitle>AI-native interfaces</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                Streaming output, tool calls rendered as real UI, honest
+                fallbacks. Rhythm Fit&apos;s coach streams NDJSON into
+                scheduled workouts; Tribe Tracker drops to deterministic
+                stats when the model fails.
               </SurfaceCardDescription>
             </CardHeader>
           </SurfaceCard>
