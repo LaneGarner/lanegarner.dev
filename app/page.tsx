@@ -84,7 +84,7 @@ const HomePage = () => {
 
       <section aria-label="What I do" className="py-12">
         <h2 className="mb-8 text-center text-3xl font-extrabold">What I do</h2>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-2">
           <SurfaceCard>
             <CardHeader>
               <SurfaceCardTitle>Design systems</SurfaceCardTitle>
@@ -135,7 +135,7 @@ const HomePage = () => {
               </SurfaceCardDescription>
             </CardHeader>
           </SurfaceCard>
-          <SurfaceCard className="md:col-span-2">
+          <SurfaceCard className="md:col-span-2 md:w-[calc(50%-0.75rem)] md:justify-self-center">
             <CardHeader>
               <SurfaceCardTitle>Accessible craft</SurfaceCardTitle>
               <SurfaceCardDescription>
