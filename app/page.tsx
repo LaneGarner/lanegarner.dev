@@ -197,6 +197,28 @@ const HomePage = () => {
         </div>
       </section>
 
+      <section aria-label="AI tooling" className="py-12">
+        <h2 className="mb-4 text-center text-3xl font-extrabold">
+          A superpower, not a replacement
+        </h2>
+        <div className="mx-auto flex max-w-2xl flex-col gap-4 text-center text-lg font-light text-ink-soft">
+          <p>
+            I code with Claude daily and have shipped with Copilot and
+            Cursor too. The speedup is real&mdash;but the output is only as
+            good as the human in the loop. Without someone who knows what
+            good looks like, you get slop: code that runs today and
+            can&apos;t be maintained tomorrow.
+          </p>
+          <p>
+            UI is where that shows most. AI has historically struggled with
+            pixel-perfect interfaces, and while newer tooling keeps getting
+            better, a discerning eye and a human leading the way still make
+            the difference. Used that way, AI isn&apos;t a replacement for
+            the craft&mdash;it&apos;s an enhancement, and a superpower.
+          </p>
+        </div>
+      </section>
+
       <section aria-label="Side projects" className="py-12">
         <h2 className="mb-4 text-center text-3xl font-extrabold">
           Side Projects
