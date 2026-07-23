@@ -54,6 +54,12 @@ const TribeTrackerCaseStudy = () => {
           silently fails. A Vercel Cron job posts an AI-written Monday recap
           into each active challenge&apos;s group chat.
         </p>
+        <p>
+          None of it is a chat interface: the survey-based challenge
+          matchmaker, the weekly digest, and the coach synopsis all render
+          as ordinary product UI&mdash;the model does its work behind the
+          scenes.
+        </p>
       </CaseSection>
 
       <CaseSection title="Offline-first with a social layer">
