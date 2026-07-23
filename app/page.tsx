@@ -50,7 +50,7 @@ const HomePage = () => {
                 href="/work"
                 className="font-bold text-accent underline underline-offset-2"
               >
-                See my work.
+                See my work <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
           </div>
