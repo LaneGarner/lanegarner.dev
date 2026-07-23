@@ -178,18 +178,17 @@ const HomePage = () => {
         </h2>
         <div className="mx-auto flex max-w-2xl flex-col gap-4 text-center text-lg font-light text-ink-soft">
           <p>
-            AI doesn&apos;t have to be a conversation. In Rhythm Fit,
-            onboarding feeds structured tool-calling and a personalized
-            multi-week training plan lands directly on the calendar&mdash;
-            equipment-filtered, injury-aware, no chat window anywhere.
-            Streaks, PRs, and stalled lifts flow from analytics into the
-            model, so coaching is proactive, not prompted.
+            AI doesn&apos;t have to be a conversation. The interesting work
+            is baking the model into the product itself: onboarding that
+            turns a short survey into a ready-to-go plan, coaching that
+            reads your actual data and speaks up on its own, digests that
+            land where you already are.
           </p>
           <p>
-            Tribe Tracker works the same way: a short survey matches you to
-            the right challenge, a coach reads your check-ins and streaks to
-            tell you what to do this week, and a weekly digest lands in your
-            tribe&apos;s chat on its own.
+            No blank text box, no prompt engineering left to the user. The
+            model works behind interfaces that look like the product&mdash;
+            and when it&apos;s unavailable, deterministic fallbacks keep the
+            feature honest.
           </p>
         </div>
       </section>
