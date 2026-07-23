@@ -9,6 +9,7 @@ import {
   SurfaceCardDescription,
 } from "@/components/site/surface-card";
 import { AIDemo } from "@/components/site/ai-demo";
+import { EmbeddedAIExamples } from "@/components/site/embedded-ai-examples";
 import { WorkGrid } from "@/components/site/work-grid";
 import { WaveBandReveal } from "@/components/site/wave-band-reveal";
 import { WaveEdge } from "@/components/site/wave-edge";
@@ -190,6 +191,9 @@ const HomePage = () => {
             and when it&apos;s unavailable, deterministic fallbacks keep the
             feature honest.
           </p>
+        </div>
+        <div className="mt-10">
+          <EmbeddedAIExamples />
         </div>
       </section>
 
