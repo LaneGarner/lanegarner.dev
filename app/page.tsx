@@ -48,9 +48,12 @@ const HomePage = () => {
               <span>My specialty is the front of the frontend.</span>
               <Link
                 href="/work"
-                className="font-bold text-accent underline underline-offset-2"
+                className="inline-flex items-center gap-1.5 font-bold text-accent"
               >
-                See my work <span aria-hidden="true">&rarr;</span>
+                <span className="underline underline-offset-2">
+                  See my work
+                </span>
+                <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
           </div>
