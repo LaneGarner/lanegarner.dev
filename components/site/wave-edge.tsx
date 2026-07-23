@@ -36,10 +36,13 @@ const y = (base: number, p: number, i: number, amp: number) =>
 const x = (base: number, p: number, i: number, amp: number) =>
   (base + drift(p, i, amp)).toFixed(2);
 
+// The second curve segment uses S, which reflects the previous control
+// point across the join. That keeps the tangent continuous there no
+// matter how the points wobble, so the wave never develops a corner.
 const buildTop = (p: number) =>
   `M0,${y(66, p, 0, 8)} ` +
   `C${x(240, p, 1, 24)},${y(78, p, 1, 14)} ${x(480, p, 2, 24)},${y(78, p, 2, 14)} ${x(720, p, 3, 24)},${y(52, p, 3, 12)} ` +
-  `C${x(960, p, 4, 24)},${y(24, p, 4, 12)} ${x(1200, p, 5, 24)},${y(20, p, 5, 10)} 1440,${y(5, p, 6, 5)} ` +
+  `S${x(1200, p, 5, 24)},${y(20, p, 5, 10)} 1440,${y(5, p, 6, 5)} ` +
   `L1440,90 L0,90 Z`;
 
 const buildBottom = (p: number) =>
