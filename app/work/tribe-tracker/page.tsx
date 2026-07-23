@@ -57,7 +57,7 @@ const TribeTrackerCaseStudy = () => {
         <p>
           None of it is a chat interface: the survey-based challenge
           matchmaker, the weekly digest, and the coach synopsis all render
-          as ordinary product UI&mdash;the model does its work behind the
+          as ordinary product UI. The model does its work behind the
           scenes.
         </p>
       </CaseSection>

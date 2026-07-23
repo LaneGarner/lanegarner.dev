@@ -65,7 +65,7 @@ const RhythmFitCaseStudy = () => {
         <p>
           The chat is the smallest part. Onboarding feeds goals, equipment,
           and injuries into structured tool-calling and a personalized
-          multi-week program lands directly on the calendar&mdash;no
+          multi-week program lands directly on the calendar, no
           conversation required. Streaks, PRs, stalled lifts, and muscle
           imbalances flow from analytics into the model, so coaching is
           proactive rather than prompted.

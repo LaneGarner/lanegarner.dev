@@ -15,7 +15,7 @@ import { SurfaceCard } from "@/components/site/surface-card";
 /**
  * Static tutti-ui vignettes for the "AI without the chat box" section: the
  * three shapes embedded AI takes when it isn't a conversation. Canned data,
- * no model anywhere — the point is the interface, not the inference.
+ * no model anywhere; the point is the interface, not the inference.
  */
 
 const ExampleCard = ({
@@ -77,7 +77,7 @@ export const EmbeddedAIExamples = () => {
           </Avatar>
           <p className="rounded-md rounded-tl-none bg-surface px-3 py-2 text-sm leading-relaxed dark:bg-chrome dark:text-chrome-ink">
             Weekly recap: 4 of 5 kept their streak. Sarah leads by 12
-            points&mdash;closable in 3 days.
+            points, closable in 3 days.
           </p>
         </div>
         <p className="mt-auto text-sm text-ink-muted">

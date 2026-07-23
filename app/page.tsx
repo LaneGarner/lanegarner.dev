@@ -144,7 +144,7 @@ const HomePage = () => {
                 Controls should look like what they do and answer every
                 action with feedback. If the focus order is wrong, the work
                 isn&apos;t done. Accessibility issues are usually usability
-                issues in disguise&mdash;fixing them makes the product better
+                issues in disguise. Fixing them makes the product better
                 for everyone.
               </SurfaceCardDescription>
             </CardHeader>
@@ -187,8 +187,8 @@ const HomePage = () => {
           </p>
           <p>
             No blank text box, no prompt engineering left to the user. The
-            model works behind interfaces that look like the product&mdash;
-            and when it&apos;s unavailable, deterministic fallbacks keep the
+            model works behind interfaces that look like the product, and
+            when it&apos;s unavailable, deterministic fallbacks keep the
             feature honest.
           </p>
         </div>
@@ -204,7 +204,7 @@ const HomePage = () => {
         <div className="mx-auto flex max-w-2xl flex-col gap-4 text-center text-lg font-light text-ink-soft">
           <p>
             I code with Claude daily and have shipped with Copilot and
-            Cursor too. The speedup is real&mdash;but the output is only as
+            Cursor too. The speedup is real, but the output is only as
             good as the human in the loop. Without someone who knows what
             good looks like, you get slop: code that runs today and
             can&apos;t be maintained tomorrow.
@@ -214,7 +214,7 @@ const HomePage = () => {
             pixel-perfect interfaces, and while newer tooling keeps getting
             better, a discerning eye and a human leading the way still make
             the difference. Used that way, AI isn&apos;t a replacement for
-            the craft&mdash;it&apos;s an enhancement, and a superpower.
+            the craft. It&apos;s an enhancement, and a superpower.
           </p>
         </div>
       </section>
