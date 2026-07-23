@@ -241,8 +241,9 @@ const HomePage = () => {
         <p className="mx-auto mb-10 max-w-2xl text-center text-lg font-light text-ink-soft">
           Passion projects, built nights and weekends because I wanted them to
           exist. Some solve my own problems, like a workout app whose AI
-          coach comes up with the training plan so I can just do the work.
-          Others are things I wanted to own end to end, like a design system
+          coach comes up with the training plan and tracks my progress over
+          time, so I can just do the work. Others are things I wanted to own
+          end to end, like a design system
           that ships to web and native from one set of tokens. Each card
           links to a write-up with the decisions behind the build.
         </p>
