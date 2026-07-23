@@ -90,7 +90,7 @@ const AboutPage = () => {
         <p>
           The practice room turned out to be excellent training for this job.
           Jazz is a discipline of{" "}
-          <span className="marker-highlight px-0.5 font-semibold">
+          <span className="font-semibold underline decoration-accent decoration-4 underline-offset-4">
             structured improvisation
           </span>
           : you internalize the fundamentals so deeply that you can respond to
