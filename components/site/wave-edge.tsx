@@ -19,24 +19,33 @@ interface WaveEdgeProps {
  */
 
 // Wobble helper: sine of the scroll phase, offset per control point.
+// Coordinates are rounded to two decimals via toFixed: Math.sin's last
+// bit differs between JS engines, so the raw decimal strings would
+// mismatch between the server render and the client hydration.
 const wob = (phase: number, i: number, amp: number) =>
   Math.sin(phase + i * 1.1) * amp;
 
 // Horizontal crest drift: zero at p=0 so the SSR path matches the first
-// client render exactly (no hydration mismatch).
+// client render exactly.
 const drift = (p: number, i: number, amp: number) =>
   (Math.sin(p * 0.7 + i * 2.3) - Math.sin(i * 2.3)) * amp;
 
+const y = (base: number, p: number, i: number, amp: number) =>
+  (base + wob(p, i, amp)).toFixed(2);
+
+const x = (base: number, p: number, i: number, amp: number) =>
+  (base + drift(p, i, amp)).toFixed(2);
+
 const buildTop = (p: number) =>
-  `M0,${66 + wob(p, 0, 8)} ` +
-  `C${240 + drift(p, 1, 24)},${78 + wob(p, 1, 14)} ${480 + drift(p, 2, 24)},${78 + wob(p, 2, 14)} ${720 + drift(p, 3, 24)},${52 + wob(p, 3, 12)} ` +
-  `C${960 + drift(p, 4, 24)},${24 + wob(p, 4, 12)} ${1200 + drift(p, 5, 24)},${20 + wob(p, 5, 10)} 1440,${5 + wob(p, 6, 5)} ` +
+  `M0,${y(66, p, 0, 8)} ` +
+  `C${x(240, p, 1, 24)},${y(78, p, 1, 14)} ${x(480, p, 2, 24)},${y(78, p, 2, 14)} ${x(720, p, 3, 24)},${y(52, p, 3, 12)} ` +
+  `C${x(960, p, 4, 24)},${y(24, p, 4, 12)} ${x(1200, p, 5, 24)},${y(20, p, 5, 10)} 1440,${y(5, p, 6, 5)} ` +
   `L1440,90 L0,90 Z`;
 
 const buildBottom = (p: number) =>
   `M0,0 L1440,0 ` +
-  `L1440,${22 + wob(-p, 0, 7)} ` +
-  `C${1160 + drift(-p, 1, 24)},${52 + wob(-p, 1, 12)} ${480 + drift(-p, 2, 24)},${38 + wob(-p, 2, 12)} 0,${58 + wob(-p, 3, 9)} Z`;
+  `L1440,${y(22, -p, 0, 7)} ` +
+  `C${x(1160, -p, 1, 24)},${y(52, -p, 1, 12)} ${x(480, -p, 2, 24)},${y(38, -p, 2, 12)} 0,${y(58, -p, 3, 9)} Z`;
 
 // Shallow static top edge for the footer: an interesting border, not a
 // performance. Ignores the scroll phase.
