@@ -53,7 +53,9 @@ const HomePage = () => {
                 <span className="underline underline-offset-2">
                   See my work
                 </span>
-                <span aria-hidden="true">&rarr;</span>
+                <span aria-hidden="true" className="text-2xl leading-none">
+                  &rarr;
+                </span>
               </Link>
             </div>
           </div>
