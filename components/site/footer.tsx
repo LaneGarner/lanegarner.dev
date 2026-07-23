@@ -9,7 +9,7 @@ import { WaveEdge } from "@/components/site/wave-edge";
 export const SiteFooter = () => {
   return (
     <footer className="text-chrome-ink">
-      <WaveEdge edge="top" fillClassName="fill-chrome-deep" />
+      <WaveEdge edge="footer" fillClassName="fill-chrome-deep" />
       <div className="flex items-center justify-center gap-4 bg-chrome-deep px-4 py-5 sm:gap-16">
         <FooterLink href="https://github.com/LaneGarner" label="GitHub">
           <GitHubIcon />

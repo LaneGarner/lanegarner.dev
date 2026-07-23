@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 
 interface WaveEdgeProps {
-  edge: "top" | "bottom";
+  edge: "top" | "bottom" | "footer";
   fillClassName?: string;
 }
 
@@ -38,16 +38,29 @@ const buildBottom = (p: number) =>
   `L1440,${22 + wob(-p, 0, 7)} ` +
   `C${1160 + drift(-p, 1, 24)},${52 + wob(-p, 1, 12)} ${480 + drift(-p, 2, 24)},${38 + wob(-p, 2, 12)} 0,${58 + wob(-p, 3, 9)} Z`;
 
+// Shallow static top edge for the footer: an interesting border, not a
+// performance. Ignores the scroll phase.
+const buildFooter = (_p: number) =>
+  `M0,28 C240,40 480,36 720,24 C960,12 1200,16 1440,8 L1440,48 L0,48 Z`;
+
 const EDGES = {
   top: {
     viewBox: "0 0 1440 90",
     className: "block h-14 w-full sm:h-20",
     build: buildTop,
+    animated: true,
   },
   bottom: {
     viewBox: "0 0 1440 70",
     className: "block h-10 w-full sm:h-14",
     build: buildBottom,
+    animated: true,
+  },
+  footer: {
+    viewBox: "0 0 1440 48",
+    className: "block h-7 w-full sm:h-10",
+    build: buildFooter,
+    animated: false,
   },
 } as const;
 
@@ -56,9 +69,10 @@ export const WaveEdge = ({
   fillClassName = "fill-chrome",
 }: WaveEdgeProps) => {
   const pathRef = useRef<SVGPathElement>(null);
-  const { viewBox, className, build } = EDGES[edge];
+  const { viewBox, className, build, animated } = EDGES[edge];
 
   useEffect(() => {
+    if (!animated) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let raf = 0;
@@ -75,7 +89,7 @@ export const WaveEdge = ({
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(raf);
     };
-  }, [build]);
+  }, [build, animated]);
 
   return (
     <svg
