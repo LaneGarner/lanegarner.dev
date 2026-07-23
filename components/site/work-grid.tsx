@@ -63,8 +63,8 @@ export const WorkGrid = () => {
                 )}
               </div>
               <CardHeader>
-                <SurfaceCardTitle className="text-xl group-hover:underline group-hover:decoration-accent group-hover:decoration-4 group-hover:underline-offset-4">
-                  {study.title}
+                <SurfaceCardTitle className="text-xl">
+                  <span className="sweep-underline pb-1">{study.title}</span>
                 </SurfaceCardTitle>
                 <SurfaceCardDescription>{study.tagline}</SurfaceCardDescription>
               </CardHeader>

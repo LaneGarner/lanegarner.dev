@@ -272,17 +272,18 @@ body {
   }
 }
 
-/* Skewed yellow inline highlight for key phrases (same marker treatment,
-   sized to the text it sits behind) */
-/* Inline highlighter bar. A background gradient (not a positioned
-   pseudo-element) so it renders correctly when the highlighted phrase
-   wraps across lines; box-decoration-break gives each line fragment its
-   own bar. */
-.marker-highlight {
+/* Accent underline that sweeps in left-to-right on hover of the nearest
+   `group` ancestor (same marker treatment as the highlighter). */
+.sweep-underline {
   background-image: linear-gradient(var(--accent), var(--accent));
   background-repeat: no-repeat;
-  background-size: 100% 0.45em;
-  background-position: 0 85%;
+  background-size: 0% 4px;
+  background-position: 0 100%;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+  transition: background-size 0.25s ease-out;
+}
+.group:hover .sweep-underline,
+.group:focus-visible .sweep-underline {
+  background-size: 100% 4px;
 }

@@ -24,7 +24,7 @@ Note: I am currently putting these resources together AS WE SPEAK. So if this li
 
 Docs are an invaluable way to learn any technology and learning to navigate them is a bit of a right of passage. You will later use docs to learn about packages, plugins, APIs, and more.
 
-Two of the best docs for the basics are <a href="https://developer.mozilla.org/">Mozilla Developer Network (MDN)</a> and <a href="https://www.w3schools.com/">W3Schools</a>. I still reference both websites all the time&mdash;even though I usually prefer MDN, the examples on W3 have helped me out more than once and are very beginner-friendly.
+Two of the best docs for the basics are <a href="https://developer.mozilla.org/">Mozilla Developer Network (MDN)</a> and <a href="https://www.w3schools.com/">W3Schools</a>. I still reference both websites all the time. Even though I usually prefer MDN, the examples on W3 have helped me out more than once and are very beginner-friendly.
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="blank">HTML - MDN</a>
 <a href="https://www.w3schools.com/html/" target="blank">HTML - W3</a>

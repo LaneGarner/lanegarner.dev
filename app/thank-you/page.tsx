@@ -12,7 +12,9 @@ const ThankYouPage = () => {
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col items-center px-4 py-16 text-center sm:px-6">
       <h1 className="mb-6 text-4xl font-extrabold sm:text-5xl">
-        <span className="marker-highlight px-1">Thank you!</span>
+        <span className="underline decoration-accent decoration-8 underline-offset-8">
+          Thank you!
+        </span>
       </h1>
       <p className="mb-8 text-lg font-light text-ink-soft">
         Your message is on its way. I&apos;ll get back to you soon.

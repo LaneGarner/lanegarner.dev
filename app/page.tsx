@@ -8,7 +8,10 @@ import {
   SurfaceCardTitle,
   SurfaceCardDescription,
 } from "@/components/site/surface-card";
+import { AIDemo } from "@/components/site/ai-demo";
+import { EmbeddedAIExamples } from "@/components/site/embedded-ai-examples";
 import { WorkGrid } from "@/components/site/work-grid";
+import { WaveBandReveal } from "@/components/site/wave-band-reveal";
 import { WaveEdge } from "@/components/site/wave-edge";
 
 const HomePage = () => {
@@ -34,22 +37,38 @@ const HomePage = () => {
           <p className="mb-4 text-6xl font-extrabold leading-tight sm:text-7xl">
             <TypingText text="Hello." />
           </p>
-          <p className="mb-6 text-xl font-light leading-tight sm:text-3xl">
-            <span className="font-extrabold">I&apos;m Lane Garner</span>,
-            <br /> a design-focused frontend
-            <br /> software engineer based
-            <br /> in Austin, Texas.
-          </p>
-          <p className="w-fit rounded-sm bg-chrome px-4 py-3 text-lg text-accent-cool">
-            My specialty is the<br/> front of the frontend.
-            <br />
-            <Link
-              href="/work"
-              className="font-bold text-accent underline underline-offset-2"
-            >
-              See my work.
-            </Link>
-          </p>
+          <div className="mb-6 flex flex-col gap-1 text-xl font-light leading-tight sm:text-3xl">
+            <span className="font-extrabold">I&apos;m Lane Garner,</span>
+            <span>a design-focused frontend</span>
+            <span>software engineer based</span>
+            <span>in Austin, Texas.</span>
+          </div>
+          <div className="w-fit rounded-sm bg-chrome px-4 py-3 text-lg text-accent-cool">
+            <div className="flex flex-col gap-2">
+              <span>My specialty is the front of the frontend.</span>
+              <Link
+                href="/work"
+                className="inline-flex items-center gap-1.5 font-bold text-accent"
+              >
+                <span className="underline underline-offset-2">
+                  See my work
+                </span>
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-5 w-5"
+                >
+                  <path d="M5 12h14" />
+                  <path d="m13 6 6 6-6 6" />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -62,29 +81,47 @@ const HomePage = () => {
       >
         <WaveEdge edge="top" />
         <div className="flex flex-col items-center gap-6 bg-chrome px-4 py-16 text-center text-chrome-ink">
-          <p className="text-3xl font-bold sm:text-6xl">I build</p>
+          <WaveBandReveal>
+            <p className="text-3xl font-bold sm:text-6xl">I build</p>
+          </WaveBandReveal>
           <p className="text-4xl font-extrabold sm:text-7xl">
             <RotatingWord />
           </p>
-          <p className="text-3xl font-bold leading-tight sm:text-6xl">
-            interfaces
-            <br /> and
-            <br /> design systems
-          </p>
+          <WaveBandReveal className="delay-150">
+            <div className="text-3xl font-bold leading-tight sm:text-6xl flex flex-col gap-0">
+              <span>interfaces</span>
+              <span>and</span>
+              <span>systems</span>
+            </div>
+          </WaveBandReveal>
         </div>
         <WaveEdge edge="bottom" />
       </section>
 
       <section aria-label="What I do" className="py-12">
         <h2 className="mb-8 text-center text-3xl font-extrabold">What I do</h2>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-2">
           <SurfaceCard>
             <CardHeader>
-              <SurfaceCardTitle>Design systems</SurfaceCardTitle>
+              <SurfaceCardTitle>Usability</SurfaceCardTitle>
               <SurfaceCardDescription>
-                Design tokens and components that survive contact with more
-                than one platform. This site runs on tutti-ui, my React +
-                React Native system.
+                Don Norman is my north star: signifiers that invite the right
+                action, feedback that answers it, mappings and constraints
+                that make the wrong action hard. If users need the manual,
+                the conceptual model failed.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+          <SurfaceCard>
+            <CardHeader>
+              <SurfaceCardTitle>Accessible craft</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                Semantic HTML, keyboard-first interactions, WCAG 2.2 AA.
+                Controls should look like what they do and answer every
+                action with feedback. If the focus order is wrong, the work
+                isn&apos;t done. Accessibility issues are usually usability
+                issues in disguise. Fixing them makes the product better
+                for everyone.
               </SurfaceCardDescription>
             </CardHeader>
           </SurfaceCard>
@@ -100,15 +137,100 @@ const HomePage = () => {
           </SurfaceCard>
           <SurfaceCard>
             <CardHeader>
-              <SurfaceCardTitle>Accessible craft</SurfaceCardTitle>
+              <SurfaceCardTitle>Design systems</SurfaceCardTitle>
               <SurfaceCardDescription>
-                Semantic HTML, keyboard-first interactions, WCAG 2.2 AA.
-                Controls should look like what they do and answer every
-                action with feedback. If the focus order is wrong, the work
-                isn&apos;t done.
+                Design tokens and components that survive contact with more
+                than one platform. This site runs on{" "}
+                <a
+                  href="https://github.com/LaneGarner/tutti-ui"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-semibold text-ink underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet"
+                >
+                  tutti-ui
+                </a>
+                , my React + React Native system.
               </SurfaceCardDescription>
             </CardHeader>
           </SurfaceCard>
+          <SurfaceCard>
+            <CardHeader>
+              <SurfaceCardTitle>AI-native interfaces</SurfaceCardTitle>
+              <SurfaceCardDescription>
+                Streaming output, tool calls rendered as real UI, honest
+                fallbacks. Rhythm Fit&apos;s coach streams NDJSON into
+                scheduled workouts; Tribe Tracker drops to deterministic
+                stats when the model fails.
+              </SurfaceCardDescription>
+            </CardHeader>
+          </SurfaceCard>
+        </div>
+      </section>
+
+      <section aria-label="AI interface demo" className="py-12">
+        <h2 className="mb-4 text-center text-3xl font-extrabold">
+          AI is an interface problem
+        </h2>
+        <p className="mx-auto mb-10 max-w-2xl text-center text-lg font-light text-ink-soft">
+          A canned exchange, no model behind it. The rendering is real:
+          tutti-ui&apos;s AgentWorkflow and StreamingText, the same components
+          documented in the{" "}
+          <a
+            href="https://lanegarner.github.io/tutti-ui/"
+            target="_blank"
+            rel="noreferrer"
+            className="font-semibold text-ink underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet"
+          >
+            Storybook
+          </a>
+          .
+        </p>
+        <AIDemo />
+      </section>
+
+      <section aria-label="AI beyond chat" className="py-12">
+        <h2 className="mb-4 text-center text-3xl font-extrabold">
+          AI without the chat box
+        </h2>
+        <div className="mx-auto flex max-w-2xl flex-col gap-4 text-center text-lg font-light text-ink-soft">
+          <p>
+            AI doesn&apos;t have to be a conversation. The interesting work
+            is baking the model into the product itself: onboarding that
+            turns a short survey into a ready-to-go plan, coaching that
+            reads your actual data and speaks up on its own, digests that
+            land where you already are.
+          </p>
+          <p>
+            No blank text box, no prompt engineering left to the user. The
+            model works behind interfaces that look like the product, and
+            when it&apos;s unavailable, deterministic fallbacks keep the
+            feature honest.
+          </p>
+        </div>
+        <div className="mt-10">
+          <EmbeddedAIExamples />
+        </div>
+      </section>
+
+      <section aria-label="AI tooling" className="py-12">
+        <h2 className="mb-4 text-center text-3xl font-extrabold">
+          A superpower, not a replacement
+        </h2>
+        <div className="mx-auto flex max-w-2xl flex-col gap-4 text-center text-lg font-light text-ink-soft">
+          <p>
+            I code with Claude daily and have shipped with Copilot and
+            Cursor too. The speedup is real, but the output is only as
+            good as the human in the loop. Without someone who knows what
+            good looks like, you get slop: code that runs today and
+            can&apos;t be maintained tomorrow.
+          </p>
+          <p>
+            UI is where that shows most. AI has historically struggled with
+            pixel-perfect interfaces, and while newer tooling keeps getting
+            better, a discerning eye and a human leading the way still make
+            the difference. Used that way, AI isn&apos;t a replacement for
+            the craft. It&apos;s an enhancement, and a superpower.
+          </p>
         </div>
       </section>
 
@@ -118,11 +240,12 @@ const HomePage = () => {
         </h2>
         <p className="mx-auto mb-10 max-w-2xl text-center text-lg font-light text-ink-soft">
           Passion projects, built nights and weekends because I wanted them to
-          exist. Some solve my own problems, like a workout app that works in
-          a basement gym with no signal. Others are things I wanted to own end
-          to end, like a design system that ships to web and native from one
-          set of tokens. Each card links to a write-up with the decisions
-          behind the build.
+          exist. Some solve my own problems, like a workout app whose AI
+          coach comes up with the training plan and tracks my progress over
+          time, so I can just do the work. Others are things I wanted to own
+          end to end, like a design system
+          that ships to web and native from one set of tokens. Each card
+          links to a write-up with the decisions behind the build.
         </p>
         <WorkGrid />
       </section>

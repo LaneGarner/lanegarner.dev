@@ -1,13 +1,16 @@
 import type { ReactNode } from "react";
+import { WaveEdge } from "@/components/site/wave-edge";
 
 /**
- * Dark footer: a chrome band with icon+label social links that glow yellow
- * on hover, and a black sub-bar with the copyright + "Built with…" line.
+ * Dark footer: a wave edge rising out of the page background into a chrome
+ * band with icon+label social links that glow yellow on hover, and a black
+ * sub-bar with the copyright + "Built with…" line.
  */
 export const SiteFooter = () => {
   return (
-    <footer className="bg-chrome-deep text-chrome-ink">
-      <div className="flex items-center justify-center gap-4 px-4 py-5 sm:gap-16">
+    <footer className="text-chrome-ink">
+      <WaveEdge edge="footer" fillClassName="fill-chrome-deep" />
+      <div className="flex items-center justify-center gap-4 bg-chrome-deep px-4 py-5 sm:gap-16">
         <FooterLink href="https://github.com/LaneGarner" label="GitHub">
           <GitHubIcon />
         </FooterLink>
