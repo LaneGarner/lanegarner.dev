@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tutti-ui/react": "^0.2.0",
-    "@tutti-ui/shared": "^0.2.0",
-    "@tutti-ui/tokens": "^0.2.0",
+    "@tutti-ui/react": "^0.3.0",
+    "@tutti-ui/shared": "^0.3.0",
+    "@tutti-ui/tokens": "^0.3.0",
     "marked": "^18.0.6",
     "next": "^15.5.0",
     "react": "^19.0.0",

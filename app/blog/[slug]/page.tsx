@@ -47,7 +47,6 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
         <BreadcrumbItem>
           <BreadcrumbLink
             href="/"
-            className="dark:text-ink-muted dark:hover:text-ink"
           >
             Home
           </BreadcrumbLink>
@@ -55,13 +54,12 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
         <BreadcrumbItem>
           <BreadcrumbLink
             href="/blog"
-            className="dark:text-ink-muted dark:hover:text-ink"
           >
             Blog
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <BreadcrumbPage className="dark:text-ink">
+          <BreadcrumbPage >
             {post.title}
           </BreadcrumbPage>
         </BreadcrumbItem>

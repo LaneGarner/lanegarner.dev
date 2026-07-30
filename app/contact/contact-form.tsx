@@ -49,7 +49,7 @@ export const ContactForm = () => {
   };
 
   const fieldOverrides =
-    "dark:border-[#4a4a4a] dark:bg-surface dark:text-ink dark:placeholder:text-ink-subtle";
+    "";
 
   return (
     <form onSubmit={handleSubmit} aria-label="Contact form">
@@ -65,7 +65,7 @@ export const ContactForm = () => {
 
       <VStack spacing="lg">
         <FormField id="contact-name" name="name" required>
-          <Label htmlFor="contact-name" className="dark:text-ink">
+          <Label htmlFor="contact-name">
             Name
           </Label>
           <Input
@@ -78,7 +78,7 @@ export const ContactForm = () => {
         </FormField>
 
         <FormField id="contact-email" name="email" required>
-          <Label htmlFor="contact-email" className="dark:text-ink">
+          <Label htmlFor="contact-email">
             Email
           </Label>
           <Input
@@ -92,7 +92,7 @@ export const ContactForm = () => {
         </FormField>
 
         <FormField id="contact-message" name="message" required>
-          <Label htmlFor="contact-message" className="dark:text-ink">
+          <Label htmlFor="contact-message">
             Message
           </Label>
           <Textarea
@@ -118,7 +118,7 @@ export const ContactForm = () => {
           type="submit"
           size="lg"
           disabled={status === "sending"}
-          className="w-fit bg-chrome text-accent hover:bg-black focus-visible:ring-accent dark:bg-chrome dark:text-accent"
+          className="w-fit"
         >
           {status === "sending" ? "Sending…" : "Send"}
         </Button>

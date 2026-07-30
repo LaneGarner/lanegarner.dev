@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CardContent, CardHeader } from "@/components/tutti";
 import {
-  SurfaceCard,
-  SurfaceCardTitle,
-  SurfaceCardDescription,
-} from "@/components/site/surface-card";
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/tutti";
 import { caseStudies } from "@/lib/case-studies";
 
 /**
@@ -22,7 +23,7 @@ export const WorkGrid = () => {
             href={`/work/${study.slug}`}
             className="group block h-full no-underline"
           >
-            <SurfaceCard
+            <Card
               variant="elevated"
               className="h-full transition-shadow group-hover:shadow-lift"
             >
@@ -63,10 +64,10 @@ export const WorkGrid = () => {
                 )}
               </div>
               <CardHeader>
-                <SurfaceCardTitle className="text-xl">
+                <CardTitle className="text-xl">
                   <span className="sweep-underline pb-1">{study.title}</span>
-                </SurfaceCardTitle>
-                <SurfaceCardDescription>{study.tagline}</SurfaceCardDescription>
+                </CardTitle>
+                <CardDescription>{study.tagline}</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="mb-4 text-sm leading-relaxed text-ink-muted">
@@ -83,7 +84,7 @@ export const WorkGrid = () => {
                   ))}
                 </p>
               </CardContent>
-            </SurfaceCard>
+            </Card>
           </Link>
         </li>
       ))}

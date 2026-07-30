@@ -4,11 +4,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   AgentWorkflow,
   Button,
+  Card,
   CardContent,
   StreamingText,
   type WorkflowStep,
 } from "@/components/tutti";
-import { SurfaceCard } from "./surface-card";
 import { useReducedMotion } from "./use-reduced-motion";
 
 const USER_MESSAGE =
@@ -119,7 +119,7 @@ export const AIDemo = () => {
 
   return (
     <div ref={rootRef} className="mx-auto max-w-2xl">
-      <SurfaceCard>
+      <Card>
         <CardContent className="flex flex-col gap-6 p-6 sm:p-8">
           <div className="flex justify-end">
             <p className="max-w-[85%] rounded-md rounded-br-none bg-chrome px-4 py-3 text-sm leading-relaxed text-chrome-ink">
@@ -129,7 +129,7 @@ export const AIDemo = () => {
 
           <AgentWorkflow
             steps={buildSteps(stage)}
-            className="text-ink [&_p]:text-ink-muted dark:[&_[data-testid=connector-line]]:border-[#3a3a3a]"
+            
           />
 
           <div className="rounded-md rounded-bl-none bg-surface px-4 py-3 text-sm leading-relaxed dark:bg-chrome dark:text-chrome-ink">
@@ -164,7 +164,7 @@ export const AIDemo = () => {
               type="button"
               size="sm"
               onClick={handleReplay}
-              className="bg-chrome text-accent hover:bg-black focus-visible:ring-accent dark:bg-chrome dark:text-accent"
+              
             >
               Replay
             </Button>
@@ -173,7 +173,7 @@ export const AIDemo = () => {
             </p>
           </div>
         </CardContent>
-      </SurfaceCard>
+      </Card>
     </div>
   );
 };

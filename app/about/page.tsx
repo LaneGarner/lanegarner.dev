@@ -77,9 +77,9 @@ const AboutPage = () => {
         </ul>
       </section>
 
-      <Divider className="mb-10 dark:border-[#3a3a3a]" />
+      <Divider className="mb-10" />
 
-      <div className="mb-10 space-y-6 text-lg font-light leading-relaxed text-ink-soft dark:text-ink-soft">
+      <div className="mb-10 space-y-6 text-lg font-light leading-relaxed text-ink-soft">
         <p>
           I&apos;m a design-focused frontend software engineer in Austin, Texas. Before
           I wrote software I was a working musician and guitar instructor. My training was in jazz
@@ -121,7 +121,7 @@ const AboutPage = () => {
             tutti-ui
           </Link>
           , a cross-platform design system (which this site is built with);
-          offline-first mobile apps with AI coaching (
+          mobile apps with AI coaching (
           <Link
             href="/work/rhythm-fit"
             className="font-semibold underline decoration-accent-cool decoration-2 underline-offset-4 hover:text-accent-quiet"
@@ -140,9 +140,9 @@ const AboutPage = () => {
             href="/work/garnerguitar"
             className="font-semibold underline decoration-accent-cool decoration-2 underline-offset-4 hover:text-accent-quiet"
           >
-            the course platform
-          </Link>{" "}
-          guitar students actually pay for.
+            garnerguitar.com
+          </Link>
+          , a guitar course website.
         </p>
 
         <p>

@@ -6,17 +6,15 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbPage,
+  Card,
   CardContent,
   CardHeader,
+  CardTitle,
   Divider,
   VStack,
   HStack,
 } from "@/components/tutti";
 import type { CaseStudy } from "@/lib/case-studies";
-import {
-  SurfaceCard,
-  SurfaceCardTitle,
-} from "./surface-card";
 
 interface CaseStudyLayoutProps {
   study: CaseStudy;
@@ -31,7 +29,6 @@ export const CaseStudyLayout = ({ study, children }: CaseStudyLayoutProps) => {
         <BreadcrumbItem>
           <BreadcrumbLink
             href="/"
-            className="dark:text-ink-muted dark:hover:text-ink"
           >
             Home
           </BreadcrumbLink>
@@ -39,13 +36,12 @@ export const CaseStudyLayout = ({ study, children }: CaseStudyLayoutProps) => {
         <BreadcrumbItem>
           <BreadcrumbLink
             href="/work"
-            className="dark:text-ink-muted dark:hover:text-ink"
           >
             Projects
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <BreadcrumbPage className="dark:text-ink">
+          <BreadcrumbPage>
             {study.title}
           </BreadcrumbPage>
         </BreadcrumbItem>
@@ -68,19 +64,19 @@ export const CaseStudyLayout = ({ study, children }: CaseStudyLayoutProps) => {
         <p className="text-xl font-light text-ink-soft">{study.tagline}</p>
       </header>
 
-      <SurfaceCard variant="outline" className="mb-10">
+      <Card variant="outline" className="mb-10">
         <CardHeader>
-          <SurfaceCardTitle>At a glance</SurfaceCardTitle>
+          <CardTitle>At a glance</CardTitle>
         </CardHeader>
         <CardContent>
-          <VStack spacing="md" className="dark:text-ink-soft">
+          <VStack spacing="md">
             <div>
               <h2 className="mb-1 text-sm font-bold uppercase tracking-wide text-ink-muted">
                 Role
               </h2>
               <p>{study.role}</p>
             </div>
-            <Divider className="dark:border-[#3a3a3a]" />
+            <Divider />
             <div>
               <h2 className="mb-2 text-sm font-bold uppercase tracking-wide text-ink-muted">
                 Stack
@@ -96,7 +92,7 @@ export const CaseStudyLayout = ({ study, children }: CaseStudyLayoutProps) => {
                 ))}
               </ul>
             </div>
-            <Divider className="dark:border-[#3a3a3a]" />
+            <Divider />
             <HStack spacing="md" wrap={true}>
               {study.links.map((link) => (
                 <a
@@ -112,11 +108,11 @@ export const CaseStudyLayout = ({ study, children }: CaseStudyLayoutProps) => {
             </HStack>
           </VStack>
         </CardContent>
-      </SurfaceCard>
+      </Card>
 
       <div className="case-study-body mb-10 space-y-10">{children}</div>
 
-      <Divider className="mb-10 dark:border-[#3a3a3a]" />
+      <Divider className="mb-10" />
       <p>
         <Link
           href="/work"
@@ -139,7 +135,7 @@ export const CaseSection = ({ title, children }: CaseSectionProps) => {
   return (
     <section aria-label={title}>
       <h2 className="mb-3 text-2xl font-extrabold">{title}</h2>
-      <div className="space-y-4 leading-relaxed text-ink-soft dark:text-ink-soft">
+      <div className="space-y-4 leading-relaxed text-ink-soft">
         {children}
       </div>
     </section>

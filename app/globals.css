@@ -48,6 +48,62 @@
   --accent-quiet: #7a9c91;
 }
 
+/* ------------------------------------------------------------------
+ * tutti-ui retheme.
+ *
+ * The design system reads its colors from --tt-* variables rather than
+ * baking them in, so pointing those at the brand tokens above is the
+ * whole integration: every tutti component picks up this palette in both
+ * themes with no `dark:` class at any call site. This block replaced 24
+ * hand-written patches and the SurfaceCard wrapper.
+ *
+ * Must come after `@tailwind base` — the preset declares its defaults in
+ * the base layer, and these win by being later at equal specificity.
+ * ------------------------------------------------------------------ */
+:root {
+  --tt-canvas: var(--paper);
+  --tt-surface: var(--paper);
+  --tt-surface-2: var(--surface);
+  --tt-surface-3: var(--surface);
+  --tt-surface-hover: var(--surface);
+  --tt-surface-active: var(--surface-alt);
+  --tt-field: var(--paper);
+  --tt-inverse: var(--chrome);
+  --tt-inverse-fg: var(--chrome-ink);
+
+  --tt-fg: var(--ink);
+  --tt-fg-strong: var(--ink);
+  --tt-fg-muted: var(--ink-soft);
+  --tt-fg-subtle: var(--ink-muted);
+  --tt-fg-faint: var(--ink-subtle);
+
+  --tt-focus: var(--accent-cool);
+
+  /* Buttons are black-with-yellow in both themes — a brand statement, not a
+     light-mode choice — so these live in :root and inherit into .dark. */
+  --tt-primary: var(--chrome);
+  --tt-primary-hover: #000000;
+  --tt-primary-fg: var(--accent);
+}
+
+.dark {
+  --tt-canvas: var(--paper);
+  --tt-surface: var(--surface-alt);
+  --tt-surface-2: var(--chrome);
+  --tt-surface-3: var(--surface);
+  --tt-surface-hover: var(--surface);
+  --tt-surface-active: var(--surface-alt);
+  --tt-field: var(--surface);
+
+  /* Body copy in tutti components sits at full --ink here rather than
+     --ink-soft. The site wants labels and card text at the same weight as
+     its own prose, which is a hierarchy decision, not a color one. */
+  --tt-fg-muted: var(--ink);
+
+  --tt-border: #3a3a3a;
+  --tt-border-strong: #4a4a4a;
+}
+
 /* Signature move: yellow selection highlight */
 ::selection {
   background-color: var(--accent);

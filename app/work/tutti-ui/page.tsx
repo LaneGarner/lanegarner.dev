@@ -80,11 +80,11 @@ const TuttiUiCaseStudy = () => {
 
       <CaseSection title="One token source, two renderers">
         <Tabs defaultValue="web">
-          <TabsList className="dark:border-[#3a3a3a]">
-            <TabsTrigger value="web" className="dark:text-ink">
+          <TabsList>
+            <TabsTrigger value="web">
               React (web)
             </TabsTrigger>
-            <TabsTrigger value="native" className="dark:text-ink">
+            <TabsTrigger value="native">
               React Native
             </TabsTrigger>
           </TabsList>

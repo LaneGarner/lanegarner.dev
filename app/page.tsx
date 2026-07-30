@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CardHeader } from "@/components/tutti";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/tutti";
 import { TypingText } from "@/components/site/typing-text";
 import { RotatingWord } from "@/components/site/rotating-word";
-import {
-  SurfaceCard,
-  SurfaceCardTitle,
-  SurfaceCardDescription,
-} from "@/components/site/surface-card";
 import { AIDemo } from "@/components/site/ai-demo";
 import { EmbeddedAIExamples } from "@/components/site/embedded-ai-examples";
 import { WorkGrid } from "@/components/site/work-grid";
@@ -101,44 +101,44 @@ const HomePage = () => {
       <section aria-label="What I do" className="py-12">
         <h2 className="mb-8 text-center text-3xl font-extrabold">What I do</h2>
         <div className="grid auto-rows-fr gap-6 md:grid-cols-2">
-          <SurfaceCard>
+          <Card>
             <CardHeader>
-              <SurfaceCardTitle>Usability</SurfaceCardTitle>
-              <SurfaceCardDescription>
+              <CardTitle>Usability</CardTitle>
+              <CardDescription>
                 Don Norman is my north star: signifiers that invite the right
                 action, feedback that answers it, mappings and constraints
                 that make the wrong action hard. If users need the manual,
                 the conceptual model failed.
-              </SurfaceCardDescription>
+              </CardDescription>
             </CardHeader>
-          </SurfaceCard>
-          <SurfaceCard>
+          </Card>
+          <Card>
             <CardHeader>
-              <SurfaceCardTitle>Accessible craft</SurfaceCardTitle>
-              <SurfaceCardDescription>
+              <CardTitle>Accessible craft</CardTitle>
+              <CardDescription>
                 Semantic HTML, keyboard-first interactions, WCAG 2.2 AA.
                 Controls should look like what they do and answer every
                 action with feedback. If the focus order is wrong, the work
                 isn&apos;t done. Accessibility issues are usually usability
                 issues in disguise. Fixing them makes the product better
                 for everyone.
-              </SurfaceCardDescription>
+              </CardDescription>
             </CardHeader>
-          </SurfaceCard>
-          <SurfaceCard>
+          </Card>
+          <Card>
             <CardHeader>
-              <SurfaceCardTitle>Product engineering</SurfaceCardTitle>
-              <SurfaceCardDescription>
+              <CardTitle>Product engineering</CardTitle>
+              <CardDescription>
                 I build and ship whole products, backend included.
                 GarnerGuitar.com has paying students; Rhythm Fit works in a
                 basement gym with no signal.
-              </SurfaceCardDescription>
+              </CardDescription>
             </CardHeader>
-          </SurfaceCard>
-          <SurfaceCard>
+          </Card>
+          <Card>
             <CardHeader>
-              <SurfaceCardTitle>Design systems</SurfaceCardTitle>
-              <SurfaceCardDescription>
+              <CardTitle>Design systems</CardTitle>
+              <CardDescription>
                 Design tokens and components that survive contact with more
                 than one platform. This site runs on{" "}
                 <a
@@ -150,20 +150,20 @@ const HomePage = () => {
                   tutti-ui
                 </a>
                 , my React + React Native system.
-              </SurfaceCardDescription>
+              </CardDescription>
             </CardHeader>
-          </SurfaceCard>
-          <SurfaceCard>
+          </Card>
+          <Card>
             <CardHeader>
-              <SurfaceCardTitle>AI-native interfaces</SurfaceCardTitle>
-              <SurfaceCardDescription>
+              <CardTitle>AI-native interfaces</CardTitle>
+              <CardDescription>
                 Streaming output, tool calls rendered as real UI, honest
                 fallbacks. Rhythm Fit&apos;s coach streams NDJSON into
                 scheduled workouts; Tribe Tracker drops to deterministic
                 stats when the model fails.
-              </SurfaceCardDescription>
+              </CardDescription>
             </CardHeader>
-          </SurfaceCard>
+          </Card>
         </div>
       </section>
 

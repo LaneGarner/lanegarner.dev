@@ -4,13 +4,13 @@ import {
   AlertTitle,
   Avatar,
   AvatarFallback,
+  Card,
   CardContent,
   ConfidenceIndicator,
   Label,
   Progress,
   Select,
 } from "@/components/tutti";
-import { SurfaceCard } from "@/components/site/surface-card";
 
 /**
  * Static tutti-ui vignettes for the "AI without the chat box" section: the
@@ -25,14 +25,14 @@ const ExampleCard = ({
   caption: string;
   children: React.ReactNode;
 }) => (
-  <SurfaceCard className="h-full">
+  <Card className="h-full">
     <CardContent className="flex h-full flex-col gap-4 p-6">
       <p className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
         {caption}
       </p>
       {children}
     </CardContent>
-  </SurfaceCard>
+  </Card>
 );
 
 export const EmbeddedAIExamples = () => {
