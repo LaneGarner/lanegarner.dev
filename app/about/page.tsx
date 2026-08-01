@@ -121,7 +121,7 @@ const AboutPage = () => {
             tutti-ui
           </Link>
           , a cross-platform design system (which this site is built with);
-          offline-first mobile apps with AI coaching (
+          local-first mobile experiences with optional AI coaching (
           <Link
             href="/work/rhythm-fit"
             className="font-semibold underline decoration-accent-cool decoration-2 underline-offset-4 hover:text-accent-quiet"

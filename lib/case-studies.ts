@@ -6,8 +6,11 @@ export interface CaseStudy {
   role: string;
   stack: string[];
   links: { label: string; href: string }[];
-  /** Short availability label shown on project listing cards. */
-  availability?: string;
+  /** Availability labels shown on project listing cards. */
+  availability?: {
+    label: string;
+    status: "live" | "coming-soon";
+  }[];
   /** Public path of a small 16/10 preview image for the home work cards. */
   previewImage?: string;
   /**
@@ -41,15 +44,19 @@ export const caseStudies: CaseStudy[] = [
     links: [
       { label: "Live Storybook", href: "https://lanegarner.github.io/tutti-ui/" },
       { label: "GitHub", href: "https://github.com/LaneGarner/tutti-ui" },
-    ],  },
+    ],
+    availability: [{ label: "Available on npm", status: "live" }],
+  },
   {
     slug: "rhythm-fit",
     title: "Rhythm Fit",
     tagline: "A polished workout tracker with a plan-aware AI coach",
     summary:
-      "A React Native app designed for real gym conditions: immediate local workout execution, a streaming AI coach, and accessible interactions shaped for one-handed use.",
-    availability: "Available on Apple App Store",
-    role: "Solo design + engineering, app and backend",
+      "A React Native app designed for real gym conditions: immediate local workout execution, plan-aware coaching, and accessible interactions shaped for one-handed use.",
+    availability: [
+      { label: "Available on Apple App Store", status: "live" },
+    ],
+    role: "Solo product design + full-stack engineering",
     previewLogo: "/rhythm-fit-icon.svg",
     logo: "/rhythm-fit-icon.svg",
     stack: [
@@ -57,9 +64,9 @@ export const caseStudies: CaseStudy[] = [
       "TypeScript",
       "Redux Toolkit",
       "NativeWind",
-      "Node.js + Express",
+      "Reanimated + Gesture Handler",
+      "Swift widgets + Live Activities",
       "Supabase",
-      "OpenAI (streaming)",
     ],
     links: [
       {
@@ -88,7 +95,12 @@ export const caseStudies: CaseStudy[] = [
     ],
     links: [
       { label: "GitHub", href: "https://github.com/LaneGarner/tribe-tracker" },
-    ],  },
+    ],
+    availability: [
+      { label: "Apple App Store coming soon", status: "coming-soon" },
+      { label: "Google Play Store coming soon", status: "coming-soon" },
+    ],
+  },
   {
     slug: "garnerguitar",
     title: "GarnerGuitar.com",
@@ -108,7 +120,9 @@ export const caseStudies: CaseStudy[] = [
     links: [
       { label: "Live site", href: "https://garnerguitar.com" },
       { label: "GitHub", href: "https://github.com/LaneGarner/garnerguitar-next" },
-    ],  },
+    ],
+    availability: [{ label: "Courses coming soon", status: "coming-soon" }],
+  },
   {
     slug: "shedr",
     title: "shedr",
@@ -122,7 +136,9 @@ export const caseStudies: CaseStudy[] = [
     links: [
       { label: "Live site", href: "https://shedr.app" },
       { label: "GitHub", href: "https://github.com/LaneGarner/shedr" },
-    ],  },
+    ],
+    availability: [{ label: "Free web app", status: "live" }],
+  },
 ];
 
 export const getCaseStudy = (slug: string): CaseStudy => {

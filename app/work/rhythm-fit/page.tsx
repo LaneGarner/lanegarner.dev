@@ -11,7 +11,7 @@ import { getCaseStudy } from "@/lib/case-studies";
 export const metadata: Metadata = {
   title: "Rhythm Fit: AI workout planning from goals to execution",
   description:
-    "Case study: designing and engineering an offline-first React Native workout tracker with personalized AI planning, streaming coaching, and accessible execution.",
+    "Case study: designing and engineering a polished React Native workout tracker with personalized AI planning and accessible, local-first execution.",
 };
 
 const RhythmFitCaseStudy = () => {
@@ -72,16 +72,16 @@ const RhythmFitCaseStudy = () => {
             already on screen—not a generic fitness answer.
           </p>
           <p>
-            Responses stream as NDJSON so the interface starts answering
-            immediately, with accessible progress announcements that do not
-            overwhelm a screen reader. Prompt caching keeps it responsive;
-            server-side entitlements, usage limits, Supabase Auth, and RLS
-            keep the paid experience secure beyond the client.
+            The interface reveals useful guidance progressively instead of
+            holding the whole answer behind a spinner. I designed the loading,
+            partial, complete, error, and retry states as one continuous flow,
+            while preserving scroll position and announcing the final answer
+            once so assistive technology is helpful rather than noisy.
           </p>
           <RhythmScreenshot
             id="chat"
             alt="Rhythm Fit AI Coach giving plan-aware progression advice"
-            caption="The Express API streams NDJSON while a compact context supplies the active plan, recent training, records, streaks, and stalled lifts."
+            caption="Progressive rendering, stable scroll behavior, clear async state, reduced motion, and a single useful screen-reader announcement make the coach feel responsive without becoming distracting."
           />
         </CaseSection>
 
@@ -113,7 +113,7 @@ const RhythmFitCaseStudy = () => {
             2.2 AA targets and contrast, meaningful labels and roles, visible
             state, sensible focus order, and reduced-motion behavior. I tested
             the same flows in both themes and made dynamic AI output useful to
-            assistive technology as it streams.
+            assistive technology as content arrives.
           </p>
           <p>
             Those choices also make the app better in context. Large controls

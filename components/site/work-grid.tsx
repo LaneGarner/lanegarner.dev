@@ -70,11 +70,23 @@ export const WorkGrid = () => {
               </CardHeader>
               <CardContent>
                 {study.availability ? (
-                  <p className="mb-3">
-                    <span className="inline-flex rounded-full bg-accent px-3 py-1 text-xs font-bold text-black">
-                      {study.availability}
-                    </span>
-                  </p>
+                  <ul
+                    className="mb-3 flex list-none flex-wrap gap-2 p-0"
+                    aria-label="Availability"
+                  >
+                    {study.availability.map(({ label, status }) => (
+                      <li
+                        key={label}
+                        className={`inline-flex rounded-full px-3 py-1 text-xs font-bold ${
+                          status === "live"
+                            ? "bg-accent text-black"
+                            : "border border-ink-subtle/40 bg-surface text-ink-muted dark:bg-chrome"
+                        }`}
+                      >
+                        {label}
+                      </li>
+                    ))}
+                  </ul>
                 ) : null}
                 <p className="mb-4 text-sm leading-relaxed text-ink-muted">
                   {study.summary}

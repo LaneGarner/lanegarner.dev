@@ -131,7 +131,7 @@ const HomePage = () => {
               <SurfaceCardDescription>
                 I build and ship whole products, backend included.
                 GarnerGuitar.com has paying students; Rhythm Fit works in a
-                basement gym with no signal.
+                basement gym even when the signal drops mid-workout.
               </SurfaceCardDescription>
             </CardHeader>
           </SurfaceCard>
@@ -155,12 +155,11 @@ const HomePage = () => {
           </SurfaceCard>
           <SurfaceCard>
             <CardHeader>
-              <SurfaceCardTitle>AI-native interfaces</SurfaceCardTitle>
+              <SurfaceCardTitle>Responsive interaction</SurfaceCardTitle>
               <SurfaceCardDescription>
-                Streaming output, tool calls rendered as real UI, honest
-                fallbacks. Rhythm Fit&apos;s coach streams NDJSON into
-                scheduled workouts; Tribe Tracker drops to deterministic
-                stats when the model fails.
+                Immediate feedback, resilient async states, motion with a
+                purpose, and forgiving recovery. An interface should feel
+                fast and understandable even when the work behind it is not.
               </SurfaceCardDescription>
             </CardHeader>
           </SurfaceCard>
@@ -169,11 +168,13 @@ const HomePage = () => {
 
       <section aria-label="AI interface demo" className="py-12">
         <h2 className="mb-4 text-center text-3xl font-extrabold">
-          AI is an interface problem
+          Async UI is still UI
         </h2>
         <p className="mx-auto mb-10 max-w-2xl text-center text-lg font-light text-ink-soft">
-          A canned exchange, no model behind it. The rendering is real:
-          tutti-ui&apos;s AgentWorkflow and StreamingText, the same components
+          A canned exchange, no model behind it. The frontend behavior is
+          real: progressive content, explicit state transitions, reduced
+          motion, and screen-reader-friendly announcements built with
+          tutti-ui&apos;s AgentWorkflow and StreamingText—the same components
           documented in the{" "}
           <a
             href="https://lanegarner.github.io/tutti-ui/"
