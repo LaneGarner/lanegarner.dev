@@ -77,7 +77,7 @@ const screens = [
     id: "coach-dashboard",
     alt: "Rhythm Fit AI Coach dashboard showing this week's generated plan",
     caption:
-      "The coach dashboard keeps the current plan, progress, and common adjustments in one place.",
+      "The coach dashboard combines the active plan with useful signals from training history: PRs, stalled lifts, and a direct path to ask for help.",
   },
   {
     id: "calendar",

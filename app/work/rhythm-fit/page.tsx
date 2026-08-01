@@ -57,9 +57,9 @@ const RhythmFitCaseStudy = () => {
             deterministic UI turns the proposal into editable product state.
           </p>
           <RhythmScreenshot
-            id="calendar"
-            alt="Rhythm Fit calendar populated by the AI planner"
-            caption="The model returns a structured tool call; validated application code expands it into dated, editable workout records in the same Redux model used by manual scheduling."
+            id="intake"
+            alt="Rhythm Fit review screen for an AI-generated workout plan"
+            caption="An editable review step makes every planning input visible before generation—goals, experience, schedule, plan length, equipment, and freeform constraints—so personalization feels inspectable rather than magical."
           />
         </CaseSection>
 
@@ -104,6 +104,26 @@ const RhythmFitCaseStudy = () => {
             id="execution"
             alt="Rhythm Fit workout execution screen"
             caption="After a connected coach creates the plan, execution is local-first: set completion updates Redux and AsyncStorage immediately, then syncs in the background."
+          />
+        </CaseSection>
+
+        <CaseSection title="Progress becomes useful feedback">
+          <p>
+            Completed workouts feed a dashboard of personal records, volume,
+            frequency, consistency, muscle-group balance, and exercise history.
+            Time-range controls let a lifter zoom from this week to their full
+            training history without changing the underlying mental model.
+          </p>
+          <p>
+            The same computed data powers coach tips. A new PR can become
+            encouragement; a stalled lift can become a concrete next action.
+            That closes the loop between logging and planning without asking
+            the user to maintain a second analytics workflow.
+          </p>
+          <RhythmScreenshot
+            id="stats"
+            alt="Rhythm Fit workout analytics with records, volume, and consistency"
+            caption="The dashboard derives PRs, completed sets and reps, volume trends, consistency, muscle distribution, and top exercises from the same activity records used during workout execution."
           />
         </CaseSection>
 
