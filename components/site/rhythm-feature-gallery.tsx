@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useTheme } from "@tutti-ui/shared";
 import {
   createContext,
   type ReactNode,
   useContext,
-  useEffect,
   useState,
 } from "react";
 
@@ -59,15 +59,11 @@ const useRhythmTheme = () => {
 };
 
 export const RhythmThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<AppTheme>("light");
+  const { theme: siteTheme } = useTheme();
+  const [localTheme, setLocalTheme] = useState<AppTheme | null>(null);
+  const theme: AppTheme = localTheme ?? (siteTheme === "dark" ? "dark" : "light");
 
-  useEffect(() => {
-    setTheme(
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light",
-    );
-  }, []);
+  const setTheme = (nextTheme: AppTheme) => setLocalTheme(nextTheme);
 
   return (
     <RhythmThemeContext.Provider value={{ theme, setTheme }}>
