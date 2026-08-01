@@ -141,7 +141,7 @@ export const RhythmFeatureGallery = () => {
         </div>
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
+      <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2">
         {screens.map((screen) => (
           <figure key={screen.id} className="flex flex-col gap-2">
             <Image
