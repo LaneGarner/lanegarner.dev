@@ -43,8 +43,9 @@ const RhythmFitCaseStudy = () => {
         <CaseSection title="AI that becomes product UI">
           <p>
             Plan creation starts with a focused intake for goals, experience,
-            equipment, schedule, and limitations. Users review every answer
-            before generating a plan.
+            equipment, schedule, and limitations. Those answers constrain the
+            exercise selection, weekly split, session length, and plan dates.
+            Users review everything before generation.
           </p>
           <p>
             The model returns a scheduling tool call. Typed code validates it,
@@ -60,19 +61,27 @@ const RhythmFitCaseStudy = () => {
 
         <CaseSection title="A coach grounded in real training">
           <p>
-            The coach uses recent workouts, records, stalled lifts, and the
-            active plan. “How should I progress?” gets an answer based on the
-            weight and reps already on screen.
+            Before each request, the app condenses recent sets, reps, and
+            weights, longer-term volume and consistency, lift progression,
+            PRs, muscle balance, and stalled exercises into a coaching
+            snapshot. The active plan and onboarding goals complete the
+            context, so advice comes from the user&apos;s training instead of a
+            generic fitness prompt.
+          </p>
+          <p>
+            A versioned, evidence-informed training layer covers progressive
+            overload, goal-specific rep ranges, weekly volume, rest, warmups,
+            recovery, and conservative safety boundaries. These are adaptable
+            defaults shaped by experience and goals, not a rigid template.
           </p>
           <p>
             The UI handles partial answers, errors, and retries without jumping
             the scroll position. Screen readers announce the final answer once.
           </p>
           <p>
-            The prompt system combines versioned instructions with a bounded
-            context snapshot. User data stays isolated as untrusted input.
-            Conversations are summarized, token budgets scale by task, and
-            scheduling output is validated before reaching the calendar.
+            User data stays isolated as untrusted input. Conversations are
+            summarized, token budgets scale by task, and scheduling output is
+            validated before reaching the calendar.
           </p>
           <RhythmScreenshot
             id="chat"
