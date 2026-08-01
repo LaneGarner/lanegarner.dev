@@ -77,25 +77,25 @@ const screens = [
     id: "coach-dashboard",
     alt: "Rhythm Fit AI Coach dashboard showing this week's generated plan",
     caption:
-      "The coach dashboard combines the active plan with useful signals from training history: PRs, stalled lifts, and a direct path to ask for help.",
+      "The coach dashboard puts the active plan beside useful signals such as a new PR or a stalled lift.",
   },
   {
     id: "calendar",
     alt: "Rhythm Fit weekly calendar populated with an AI-generated workout",
     caption:
-      "A generated plan becomes real product data: dated exercises, supersets, and completion state.",
+      "A generated plan becomes dated exercises, supersets, and trackable progress.",
   },
   {
     id: "execution",
     alt: "Rhythm Fit bench press execution screen with AI-programmed sets, reps, and weight",
     caption:
-      "The plan flows into set-by-set execution with a persistent timer and plate-calculator access.",
+      "Each workout moves into a focused set-by-set view with a timer and plate calculator nearby.",
   },
   {
     id: "chat",
     alt: "Rhythm Fit AI Coach explaining how to progress a bench press workout",
     caption:
-      "Chat is grounded in the plan: the coach can answer a specific progression question using programmed weight and reps.",
+      "The coach answers progression questions using the weight and reps already in the plan.",
   },
 ] as const;
 
@@ -110,8 +110,8 @@ export const RhythmFeatureGallery = () => {
             From goals to the gym floor
           </h2>
           <p className="mt-1 text-sm text-ink-muted">
-            Rhythm can follow the device&apos;s appearance automatically or stay
-            in the Light or Dark theme a lifter chooses.
+            Rhythm can follow the device appearance or stay in Light or Dark
+            mode.
           </p>
         </div>
 

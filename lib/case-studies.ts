@@ -52,7 +52,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Rhythm Fit",
     tagline: "A polished workout tracker with a plan-aware AI coach",
     summary:
-      "A React Native app designed for real gym conditions: immediate local workout execution, plan-aware coaching, and accessible interactions shaped for one-handed use.",
+      "A React Native workout app with quick local logging, plan-aware coaching, and accessible controls built for one-handed use.",
     availability: [
       { label: "Available on Apple App Store", status: "live" },
     ],
