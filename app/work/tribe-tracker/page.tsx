@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CaseStudyLayout, CaseSection } from "@/components/site/case-study";
-import { ScreenshotPlaceholder } from "@/components/site/screenshot-placeholder";
+import { CaseScreenshot } from "@/components/site/case-screenshot";
 import { getCaseStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
@@ -25,15 +25,20 @@ const TribeTrackerCaseStudy = () => {
         </p>
       </CaseSection>
 
-      <div className="flex flex-wrap justify-center gap-4">
-        <ScreenshotPlaceholder
-          label="Challenge detail (habits + participants)"
-          aspect="tall"
+      <div className="grid items-start gap-6 sm:grid-cols-2">
+        <CaseScreenshot
+          src="/case-studies/tribe-discover-iphone.png"
+          alt="Tribe Tracker Discover screen showing public habit challenges on iPhone"
+          caption="Discover and join public challenges on iPhone"
+          width={1206}
+          height={2622}
         />
-        <ScreenshotPlaceholder label="Leaderboard" aspect="tall" />
-        <ScreenshotPlaceholder
-          label="AI coach synopsis screen"
-          aspect="tall"
+        <CaseScreenshot
+          src="/case-studies/tribe-discover-ipad.png"
+          alt="Tribe Tracker Discover screen showing public habit challenges on iPad"
+          caption="The Discover experience scales naturally to iPad"
+          width={2064}
+          height={2752}
         />
       </div>
 

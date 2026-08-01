@@ -69,6 +69,13 @@ export const WorkGrid = () => {
                 <SurfaceCardDescription>{study.tagline}</SurfaceCardDescription>
               </CardHeader>
               <CardContent>
+                {study.availability ? (
+                  <p className="mb-3">
+                    <span className="inline-flex rounded-full bg-accent px-3 py-1 text-xs font-bold text-black">
+                      {study.availability}
+                    </span>
+                  </p>
+                ) : null}
                 <p className="mb-4 text-sm leading-relaxed text-ink-muted">
                   {study.summary}
                 </p>

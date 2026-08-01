@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { CaseStudyLayout, CaseSection } from "@/components/site/case-study";
-import { ScreenshotPlaceholder } from "@/components/site/screenshot-placeholder";
+import { CaseScreenshot } from "@/components/site/case-screenshot";
 import { getCaseStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
@@ -25,18 +25,20 @@ const RhythmFitCaseStudy = () => {
         </p>
       </CaseSection>
 
-      <div className="flex flex-wrap justify-center gap-4">
-        <ScreenshotPlaceholder
-          label="Weekly planner (7-day view)"
-          aspect="tall"
+      <div className="grid gap-6 sm:grid-cols-2">
+        <CaseScreenshot
+          src="/case-studies/rhythm-weekly-planner-light.png"
+          alt="Rhythm Fit weekly workout planner on iPad in light mode"
+          caption="The seven-day planner in light mode"
+          width={2064}
+          height={2752}
         />
-        <ScreenshotPlaceholder
-          label="Workout execution (set-by-set timer)"
-          aspect="tall"
-        />
-        <ScreenshotPlaceholder
-          label="AI Coach streaming a multi-week program"
-          aspect="tall"
+        <CaseScreenshot
+          src="/case-studies/rhythm-weekly-planner-dark.png"
+          alt="Rhythm Fit weekly workout planner on iPad in dark mode"
+          caption="The same planner adapts cleanly to dark mode"
+          width={2064}
+          height={2752}
         />
       </div>
 

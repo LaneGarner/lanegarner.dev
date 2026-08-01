@@ -6,6 +6,8 @@ export interface CaseStudy {
   role: string;
   stack: string[];
   links: { label: string; href: string }[];
+  /** Short availability label shown on project listing cards. */
+  availability?: string;
   /** Public path of a small 16/10 preview image for the home work cards. */
   previewImage?: string;
   /**
@@ -46,6 +48,7 @@ export const caseStudies: CaseStudy[] = [
     tagline: "Offline-first workout tracker with a streaming AI coach",
     summary:
       "A React Native app built for real gym conditions: every mutation lands locally first, syncs when a connection returns, and works with no backend at all. The AI coach streams NDJSON; accessibility is WCAG 2.2 AA.",
+    availability: "Available on Apple App Store",
     role: "Solo design + engineering, app and backend",
     previewLogo: "/rhythm-fit-icon.svg",
     logo: "/rhythm-fit-icon.svg",
@@ -58,7 +61,14 @@ export const caseStudies: CaseStudy[] = [
       "Supabase",
       "OpenAI (streaming)",
     ],
-    links: [{ label: "GitHub", href: "https://github.com/LaneGarner/rhythm" }],  },
+    links: [
+      {
+        label: "Download on the App Store",
+        href: "https://apps.apple.com/us/app/rhythm-fitness/id6749348899",
+      },
+      { label: "GitHub", href: "https://github.com/LaneGarner/rhythm" },
+    ],
+  },
   {
     slug: "tribe-tracker",
     title: "Tribe Tracker",
