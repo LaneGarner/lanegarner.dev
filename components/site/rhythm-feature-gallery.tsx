@@ -116,25 +116,25 @@ const screens = [
     id: "coach-dashboard",
     alt: "Rhythm Fit AI Coach dashboard showing this week's generated plan",
     caption:
-      "Rhythm's AI Coach keeps the weekly plan, progress, and training signals in one place.",
+      "The AI Coach keeps the weekly plan, progress, and training signals in one place.",
   },
   {
     id: "calendar",
     alt: "Rhythm Fit weekly calendar populated with an AI-generated workout",
     caption:
-      "Rhythm schedules generated exercises and supersets on the weekly calendar.",
+      "Generated exercises and supersets land directly on the weekly calendar.",
   },
   {
     id: "execution",
     alt: "Rhythm Fit bench press execution screen with AI-programmed sets, reps, and weight",
     caption:
-      "Rhythm keeps each set, the workout timer, and plate calculator within reach.",
+      "Each set, the workout timer, and plate calculator stay within reach.",
   },
   {
     id: "chat",
     alt: "Rhythm Fit AI Coach explaining how to progress a bench press workout",
     caption:
-      "Rhythm's coach uses planned weight and reps to answer progression questions.",
+      "Plan-aware coaching uses the programmed weight and reps to answer progression questions.",
   },
 ] as const;
 
