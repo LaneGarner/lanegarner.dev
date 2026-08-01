@@ -11,6 +11,38 @@ import {
 
 type AppTheme = "light" | "dark";
 
+const SCREENSHOT_FRAME_CLASS = "flex flex-col gap-2 pt-6";
+
+type ScreenshotFrameProps = {
+  id: string;
+  alt: string;
+  caption: string;
+  theme: AppTheme;
+  className?: string;
+};
+
+const ScreenshotFrame = ({
+  id,
+  alt,
+  caption,
+  theme,
+  className = "",
+}: ScreenshotFrameProps) => (
+  <figure className={`${SCREENSHOT_FRAME_CLASS} ${className}`}>
+    <Image
+      src={`/case-studies/rhythm-${id}-${theme}.png`}
+      alt={`${alt} in ${theme} mode`}
+      width={1242}
+      height={2688}
+      className="w-full rounded-card border border-ink-subtle/30 shadow-lift"
+      sizes="(min-width: 768px) 352px, 100vw"
+    />
+    <figcaption className="text-sm leading-relaxed text-ink-muted">
+      {caption}
+    </figcaption>
+  </figure>
+);
+
 const RhythmThemeContext = createContext<{
   theme: AppTheme;
   setTheme: (theme: AppTheme) => void;
@@ -56,19 +88,13 @@ export const RhythmScreenshot = ({
   const { theme } = useRhythmTheme();
 
   return (
-    <figure className="mx-auto mt-6 flex max-w-sm flex-col gap-2">
-      <Image
-        src={`/case-studies/rhythm-${id}-${theme}.png`}
-        alt={`${alt} in ${theme} mode`}
-        width={1242}
-        height={2688}
-        className="w-full rounded-card border border-ink-subtle/30 shadow-lift"
-        sizes="(min-width: 768px) 352px, 100vw"
-      />
-      <figcaption className="text-sm leading-relaxed text-ink-muted">
-        {caption}
-      </figcaption>
-    </figure>
+    <ScreenshotFrame
+      id={id}
+      alt={alt}
+      caption={caption}
+      theme={theme}
+      className="mx-auto max-w-sm"
+    />
   );
 };
 
@@ -141,21 +167,9 @@ export const RhythmFeatureGallery = () => {
         </div>
       </div>
 
-      <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         {screens.map((screen) => (
-          <figure key={screen.id} className="flex flex-col gap-2">
-            <Image
-              src={`/case-studies/rhythm-${screen.id}-${theme}.png`}
-              alt={`${screen.alt} in ${theme} mode`}
-              width={1242}
-              height={2688}
-              className="w-full rounded-card border border-ink-subtle/30 shadow-lift"
-              sizes="(min-width: 768px) 352px, 100vw"
-            />
-            <figcaption className="text-sm leading-relaxed text-ink-muted">
-              {screen.caption}
-            </figcaption>
-          </figure>
+          <ScreenshotFrame key={screen.id} {...screen} theme={theme} />
         ))}
       </div>
     </section>
