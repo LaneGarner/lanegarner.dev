@@ -135,18 +135,32 @@ const RhythmFitCaseStudy = () => {
         <CaseSection title="Also in the box">
           <ul className="list-disc space-y-2 pl-6">
             <li>Supersets with back-to-back guided execution</li>
-            <li>A workout timer that survives backgrounding</li>
-            <li>Streaks, exercise history, and PRs</li>
+            <li>Count-up, countdown, and EMOM workout timers</li>
             <li>Plate math and lift calculators</li>
-            <li>
-              Guided onboarding, app themes, and iPhone/iPad layouts
-            </li>
+            <li>Guided onboarding for goals, schedule, and equipment</li>
           </ul>
-          <RhythmScreenshot
-            id="calculator"
-            alt="Rhythm Fit plate calculator showing a 185-pound barbell setup"
-            caption="Configured barbells and available plates produce a per-side loading plan."
-          />
+          <div className="grid gap-6 sm:grid-cols-2">
+            <RhythmScreenshot
+              id="calculator"
+              alt="Rhythm Fit plate calculator showing a 185-pound barbell setup"
+              caption="Configured barbells and available plates produce a per-side loading plan."
+            />
+            <RhythmScreenshot
+              id="superset"
+              alt="Rhythm Fit superset execution screen for lateral raises and tricep pushdowns"
+              caption="Superset pairs stay together through weight, reps, and set completion."
+            />
+            <RhythmScreenshot
+              id="timer"
+              alt="Rhythm Fit workout timer with count-up, countdown, and EMOM modes"
+              caption="Count-up, countdown, and EMOM modes stay within the active workout."
+            />
+            <RhythmScreenshot
+              id="onboarding"
+              alt="Rhythm Fit guided onboarding asking about training goals"
+              caption="Guided questions turn goals, schedule, and equipment into planning context."
+            />
+          </div>
         </CaseSection>
       </RhythmThemeProvider>
     </CaseStudyLayout>
