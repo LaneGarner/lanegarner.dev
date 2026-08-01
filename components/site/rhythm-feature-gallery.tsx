@@ -110,8 +110,8 @@ export const RhythmFeatureGallery = () => {
             From goals to the gym floor
           </h2>
           <p className="mt-1 text-sm text-ink-muted">
-            Screenshots follow your system appearance initially; Rhythm also
-            supports explicit Light and Dark overrides in-app.
+            Rhythm can follow the device&apos;s appearance automatically or stay
+            in the Light or Dark theme a lifter chooses.
           </p>
         </div>
 
