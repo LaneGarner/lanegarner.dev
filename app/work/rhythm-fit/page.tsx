@@ -119,9 +119,8 @@ const RhythmFitCaseStudy = () => {
             Those choices also make the app better in context. Large controls
             and unambiguous completion state help anyone operating one-handed
             and half-focused. System, Light, and Dark appearance modes respect
-            preference without removing control; native Swift work adds the
-            home-screen widget and Live Activity while staying aligned with
-            Apple&apos;s Human Interface Guidelines.
+            preference without removing control, while the broader interaction
+            system stays aligned with Apple&apos;s Human Interface Guidelines.
           </p>
           <RhythmScreenshot
             id="coach-dashboard"

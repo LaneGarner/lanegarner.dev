@@ -64,9 +64,8 @@ export const caseStudies: CaseStudy[] = [
       "TypeScript",
       "Redux Toolkit",
       "NativeWind",
-      "Reanimated + Gesture Handler",
-      "Swift widgets + Live Activities",
       "Supabase",
+      "OpenAI",
     ],
     links: [
       {
