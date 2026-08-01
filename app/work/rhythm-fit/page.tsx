@@ -78,6 +78,14 @@ const RhythmFitCaseStudy = () => {
             while preserving scroll position and announcing the final answer
             once so assistive technology is helpful rather than noisy.
           </p>
+          <p>
+            Prompt engineering is treated like application architecture, not
+            hidden copywriting. A versioned, stable instruction layer is kept
+            separate from a bounded snapshot of workout and conversation data,
+            which is serialized and treated as untrusted input. Longer history
+            is summarized, token budgets scale with the task, and structured
+            scheduling output is validated before it can become calendar data.
+          </p>
           <RhythmScreenshot
             id="chat"
             alt="Rhythm Fit AI Coach giving plan-aware progression advice"
