@@ -6,6 +6,8 @@ import {
   createContext,
   type ReactNode,
   useContext,
+  useEffect,
+  useRef,
   useState,
 } from "react";
 
@@ -60,10 +62,25 @@ const useRhythmTheme = () => {
 
 export const RhythmThemeProvider = ({ children }: { children: ReactNode }) => {
   const { theme: siteTheme } = useTheme();
-  const [localTheme, setLocalTheme] = useState<AppTheme | null>(null);
-  const theme: AppTheme = localTheme ?? (siteTheme === "dark" ? "dark" : "light");
+  const [localSelection, setLocalSelection] = useState<{
+    theme: AppTheme;
+    siteTheme: AppTheme;
+  } | null>(null);
+  const previousSiteTheme = useRef(siteTheme);
+  const theme: AppTheme =
+    localSelection?.siteTheme === siteTheme
+      ? localSelection.theme
+      : siteTheme;
 
-  const setTheme = (nextTheme: AppTheme) => setLocalTheme(nextTheme);
+  useEffect(() => {
+    if (previousSiteTheme.current !== siteTheme) {
+      previousSiteTheme.current = siteTheme;
+      setLocalSelection(null);
+    }
+  }, [siteTheme]);
+
+  const setTheme = (nextTheme: AppTheme) =>
+    setLocalSelection({ theme: nextTheme, siteTheme });
 
   return (
     <RhythmThemeContext.Provider value={{ theme, setTheme }}>
@@ -99,25 +116,24 @@ const screens = [
     id: "coach-dashboard",
     alt: "Rhythm Fit AI Coach dashboard showing this week's generated plan",
     caption:
-      "The coach dashboard puts the active plan beside useful signals such as a new PR or a stalled lift.",
+      "The active plan sits beside useful signals such as a new PR or stalled lift.",
   },
   {
     id: "calendar",
     alt: "Rhythm Fit weekly calendar populated with an AI-generated workout",
-    caption:
-      "A generated plan becomes dated exercises, supersets, and trackable progress.",
+    caption: "A generated plan becomes scheduled exercises and supersets.",
   },
   {
     id: "execution",
     alt: "Rhythm Fit bench press execution screen with AI-programmed sets, reps, and weight",
     caption:
-      "Each workout moves into a focused set-by-set view with a timer and plate calculator nearby.",
+      "A focused set-by-set view keeps the timer and plate calculator nearby.",
   },
   {
     id: "chat",
     alt: "Rhythm Fit AI Coach explaining how to progress a bench press workout",
     caption:
-      "The coach answers progression questions using the weight and reps already in the plan.",
+      "The coach answers using the weight and reps already in the plan.",
   },
 ] as const;
 
@@ -150,7 +166,7 @@ export const RhythmFeatureGallery = () => {
                 type="button"
                 aria-pressed={selected}
                 onClick={() => setTheme(option)}
-                className={`rounded-full px-4 py-2 text-sm font-bold capitalize transition-colors ${
+                className={`rounded-full px-4 py-2 text-sm font-bold capitalize transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                   selected
                     ? "bg-ink text-paper"
                     : "text-ink-muted hover:text-ink"

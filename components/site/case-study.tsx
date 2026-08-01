@@ -10,7 +10,6 @@ import {
   CardHeader,
   Divider,
   VStack,
-  HStack,
 } from "@/components/tutti";
 import type { CaseStudy } from "@/lib/case-studies";
 import {
@@ -97,19 +96,20 @@ export const CaseStudyLayout = ({ study, children }: CaseStudyLayoutProps) => {
               </ul>
             </div>
             <Divider className="dark:border-[#3a3a3a]" />
-            <HStack spacing="md" wrap={true}>
+            <ul className="flex flex-wrap gap-x-6 gap-y-3" aria-label="Links">
               {study.links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-semibold text-ink-soft underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet dark:text-ink"
-                >
-                  {link.label} ↗
-                </a>
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold text-ink-soft underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet dark:text-ink"
+                  >
+                    {link.label} ↗
+                  </a>
+                </li>
               ))}
-            </HStack>
+            </ul>
           </VStack>
         </CardContent>
       </SurfaceCard>

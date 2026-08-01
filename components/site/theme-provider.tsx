@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import { ThemeProvider, useTheme } from "@tutti-ui/shared";
 
 const STORAGE_KEY = "theme";
@@ -8,13 +8,10 @@ const STORAGE_KEY = "theme";
 type StoredPreference = "light" | "dark" | "system";
 
 /**
- * Read the saved preference synchronously so the provider's very first
- * render already resolves to the right theme. Restoring it in a mount
- * effect (the previous approach) meant the provider spent one paint on
- * its "system" default; anyone whose saved choice differed from their OS
- * setting saw the wrong theme flash in before the effect corrected it.
- * Returns "system" during SSR, where the class is set pre-paint by the
- * blocking script in app/layout.tsx anyway.
+ * Read the saved preference after hydration. The blocking script in
+ * app/layout.tsx applies the resolved class before paint, while keeping the
+ * provider's server and first client render deterministic avoids hydration
+ * mismatches for components that consume the theme context.
  */
 const getStoredPreference = (): StoredPreference => {
   if (typeof window === "undefined") return "system";
@@ -42,7 +39,7 @@ interface ThemeChildrenProps {
 export const SiteThemeProvider = ({ children }: ThemeChildrenProps) => {
   return (
     <ThemeProvider
-      initialPreference={getStoredPreference()}
+      initialPreference="light"
       onPreferenceChange={(preference) => {
         try {
           window.localStorage.setItem(STORAGE_KEY, preference);
@@ -57,7 +54,14 @@ export const SiteThemeProvider = ({ children }: ThemeChildrenProps) => {
 };
 
 const ThemeSync = ({ children }: ThemeChildrenProps) => {
-  const { theme } = useTheme();
+  const { theme, setPreference } = useTheme();
+  const hasRestoredPreference = useRef(false);
+
+  useEffect(() => {
+    if (hasRestoredPreference.current) return;
+    hasRestoredPreference.current = true;
+    setPreference(getStoredPreference());
+  }, [setPreference]);
 
   // Keep Tailwind's `.dark` class in step with the resolved theme. On first
   // run this matches what the layout's pre-paint script already set, so it
