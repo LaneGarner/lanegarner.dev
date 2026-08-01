@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 import { CaseStudyLayout, CaseSection } from "@/components/site/case-study";
-import { CaseScreenshot } from "@/components/site/case-screenshot";
+import { GitHubLatestCommit } from "@/components/site/github-latest-commit";
+import {
+  RhythmFeatureGallery,
+  RhythmScreenshot,
+  RhythmThemeProvider,
+} from "@/components/site/rhythm-feature-gallery";
 import { getCaseStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
-  title: "Rhythm Fit: offline-first AI workout coach",
+  title: "Rhythm Fit: AI workout planning from goals to execution",
   description:
-    "Case study: an offline-first React Native workout tracker with a streaming AI coach and WCAG 2.2 AA accessibility.",
+    "Case study: designing and engineering an offline-first React Native workout tracker with personalized AI planning, streaming coaching, and accessible execution.",
 };
 
 const RhythmFitCaseStudy = () => {
@@ -16,92 +21,135 @@ const RhythmFitCaseStudy = () => {
     <CaseStudyLayout study={study}>
       <CaseSection title="Overview">
         <p>
-          Rhythm Fit is a workout tracker and AI coach built for real gym
-          conditions: basements with no signal, mid-set glances, sweaty
-          thumbs. It&apos;s a React Native / Expo app where every mutation
-          lands in local storage instantly, a sync middleware queues changes
-          and reconciles with the server when a connection returns, and the
-          entire app is fully usable with no backend at all.
+          Rhythm Fit is the workout app I wanted at the gym: fast enough to
+          use between sets, thoughtful enough to plan an entire training
+          block, and polished enough to disappear into the workout. It covers
+          the full loop—from asking an AI coach what to do, to scheduling the
+          plan, logging every set, and knowing how to progress next time.
+        </p>
+        <p>
+          I designed and engineered the React Native product, interaction
+          system, and Node/Supabase backend as one experience. The interesting
+          frontend challenge was the environment itself: weak signal, short
+          attention, sweaty hands, and decisions made one-handed. That pushed
+          every choice toward clear hierarchy, immediate feedback, generous
+          targets, and useful offline behavior.
         </p>
       </CaseSection>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        <CaseScreenshot
-          src="/case-studies/rhythm-weekly-planner-light.png"
-          alt="Rhythm Fit weekly workout planner on iPad in light mode"
-          caption="The seven-day planner in light mode"
-          width={2064}
-          height={2752}
-        />
-        <CaseScreenshot
-          src="/case-studies/rhythm-weekly-planner-dark.png"
-          alt="Rhythm Fit weekly workout planner on iPad in dark mode"
-          caption="The same planner adapts cleanly to dark mode"
-          width={2064}
-          height={2752}
-        />
-      </div>
+      <GitHubLatestCommit />
 
-      <CaseSection title="Offline-first, for real">
-        <p>
-          The data flow is: user action → Redux dispatch → local state →
-          AsyncStorage save → background API sync. Failed syncs queue and
-          retry; app boot hydrates from disk first, then reconciles with the
-          server. The backend (Node/Express + Supabase) is genuinely
-          optional: local-only mode is a supported configuration.
-        </p>
-        <p>
-          That constraint shaped the UX everywhere: nothing ever spins waiting
-          for a network, and sync state is ambient rather than modal.
-        </p>
-      </CaseSection>
+      <RhythmThemeProvider>
+        <RhythmFeatureGallery />
 
-      <CaseSection title="A streaming AI coach">
-        <p>
-          The AI coach plans workouts, answers training questions, and
-          generates multi-week programs. Responses stream as NDJSON so the
-          plan renders as it&apos;s written. Streamed text is easy to get
-          wrong for screen readers, so the coach announces progress and
-          respects reduced motion.
-        </p>
-        <p>
-          The chat is the smallest part. Onboarding feeds goals, equipment,
-          and injuries into structured tool-calling and a personalized
-          multi-week program lands directly on the calendar, no
-          conversation required. Streaks, PRs, stalled lifts, and muscle
-          imbalances flow from analytics into the model, so coaching is
-          proactive rather than prompted.
-        </p>
-      </CaseSection>
+        <CaseSection title="AI that becomes product UI">
+          <p>
+            I avoided the usual empty AI chat box. A focused intake collects
+            goals, experience, equipment, training days, session length, and
+            limitations, then turns those answers into a personalized weekly
+            split with enough structure to preview and trust.
+          </p>
+          <p>
+            Underneath that calm UI, the model returns a scheduling tool call.
+            Typed application code validates it, expands recurring weeks,
+            creates sets and supersets, and writes everything into the same
+            Redux model as a manually entered workout. The model proposes;
+            deterministic UI turns the proposal into editable product state.
+          </p>
+          <RhythmScreenshot
+            id="calendar"
+            alt="Rhythm Fit calendar populated by the AI planner"
+            caption="The model returns a structured tool call; validated application code expands it into dated, editable workout records in the same Redux model used by manual scheduling."
+          />
+        </CaseSection>
 
-      <CaseSection title="Accessibility as a feature">
-        <p>
-          WCAG 2.2 AA touch targets, labels, and roles across the app&apos;s
-          interactive elements, with acceptance criteria of their own. You
-          use a gym app with shaky hands and half your attention; accessible
-          design is just good design here.
-        </p>
-        <p>
-          The iOS build follows Apple&apos;s Human Interface Guidelines where
-          it matters: a home-screen widget and Live Activity built in Swift,
-          and reduced motion respected throughout the app.
-        </p>
-      </CaseSection>
+        <CaseSection title="A coach grounded in real training">
+          <p>
+            The coach is useful because it understands the product around it.
+            I build a compact context from recent workouts, records, streaks,
+            stalled lifts, muscle-group balance, and the active plan. “How
+            should I progress?” becomes advice about the weight and reps
+            already on screen—not a generic fitness answer.
+          </p>
+          <p>
+            Responses stream as NDJSON so the interface starts answering
+            immediately, with accessible progress announcements that do not
+            overwhelm a screen reader. Prompt caching keeps it responsive;
+            server-side entitlements, usage limits, Supabase Auth, and RLS
+            keep the paid experience secure beyond the client.
+          </p>
+          <RhythmScreenshot
+            id="chat"
+            alt="Rhythm Fit AI Coach giving plan-aware progression advice"
+            caption="The Express API streams NDJSON while a compact context supplies the active plan, recent training, records, streaks, and stalled lifts."
+          />
+        </CaseSection>
 
-      <CaseSection title="Also in the box">
-        <ul className="list-disc space-y-2 pl-6">
-          <li>Supersets with back-to-back guided execution</li>
-          <li>
-            A global workout timer (count up/down) that survives backgrounding
-          </li>
-          <li>Stats, streaks, per-exercise history, and PRs</li>
-          <li>Plate-math and common lift calculators</li>
-          <li>
-            Onboarding with spotlight overlays (progressive disclosure, not a
-            slideshow); light/dark theming
-          </li>
-        </ul>
-      </CaseSection>
+        <CaseSection title="Local-first where it matters">
+          <p>
+            The AI coach needs a connection; the workout it creates should
+            not. Once a plan is saved, viewing it and logging sets stay fast in
+            a spotty gym. Redux updates the UI immediately, AsyncStorage
+            persists locally, and account sync happens in the background.
+            Failed writes queue and retry.
+          </p>
+          <p>
+            This is a deliberate product boundary, not a blanket offline
+            claim. Networked features can be visibly networked; workout
+            execution cannot afford to stall. The architecture protects the
+            moment where latency would be most frustrating without obscuring
+            what still requires the server.
+          </p>
+          <RhythmScreenshot
+            id="execution"
+            alt="Rhythm Fit workout execution screen"
+            caption="After a connected coach creates the plan, execution is local-first: set completion updates Redux and AsyncStorage immediately, then syncs in the background."
+          />
+        </CaseSection>
+
+        <CaseSection title="Accessibility is interaction design">
+          <p>
+            Accessibility had acceptance criteria, not a cleanup pass: WCAG
+            2.2 AA targets and contrast, meaningful labels and roles, visible
+            state, sensible focus order, and reduced-motion behavior. I tested
+            the same flows in both themes and made dynamic AI output useful to
+            assistive technology as it streams.
+          </p>
+          <p>
+            Those choices also make the app better in context. Large controls
+            and unambiguous completion state help anyone operating one-handed
+            and half-focused. System, Light, and Dark appearance modes respect
+            preference without removing control; native Swift work adds the
+            home-screen widget and Live Activity while staying aligned with
+            Apple&apos;s Human Interface Guidelines.
+          </p>
+          <RhythmScreenshot
+            id="coach-dashboard"
+            alt="Rhythm Fit coach dashboard with large labeled controls"
+            caption="Large labeled targets, explicit state, AA contrast, reduced-motion handling, and System/Light/Dark appearance modes support one-handed, low-attention use in the gym."
+          />
+        </CaseSection>
+
+        <CaseSection title="Also in the box">
+          <ul className="list-disc space-y-2 pl-6">
+            <li>Supersets with back-to-back guided execution</li>
+            <li>
+              A global workout timer (count up/down) that survives backgrounding
+            </li>
+            <li>Stats, streaks, per-exercise history, and PRs</li>
+            <li>Plate-math and common lift calculators</li>
+            <li>
+              Spotlight onboarding, light/dark/system themes, and responsive
+              iPhone and iPad layouts
+            </li>
+          </ul>
+          <RhythmScreenshot
+            id="calculator"
+            alt="Rhythm Fit plate calculator showing a 185-pound barbell setup"
+            caption="Equipment-aware plate math turns a target weight into a per-side loading plan, using the lifter's configured barbells and available plates."
+          />
+        </CaseSection>
+      </RhythmThemeProvider>
     </CaseStudyLayout>
   );
 };

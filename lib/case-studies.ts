@@ -45,9 +45,9 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "rhythm-fit",
     title: "Rhythm Fit",
-    tagline: "Offline-first workout tracker with a streaming AI coach",
+    tagline: "A polished workout tracker with a plan-aware AI coach",
     summary:
-      "A React Native app built for real gym conditions: every mutation lands locally first, syncs when a connection returns, and works with no backend at all. The AI coach streams NDJSON; accessibility is WCAG 2.2 AA.",
+      "A React Native app designed for real gym conditions: immediate local workout execution, a streaming AI coach, and accessible interactions shaped for one-handed use.",
     availability: "Available on Apple App Store",
     role: "Solo design + engineering, app and backend",
     previewLogo: "/rhythm-fit-icon.svg",
@@ -63,10 +63,10 @@ export const caseStudies: CaseStudy[] = [
     ],
     links: [
       {
-        label: "Download on the App Store",
+        label: "Apple App Store",
         href: "https://apps.apple.com/us/app/rhythm-fitness/id6749348899",
       },
-      { label: "GitHub", href: "https://github.com/LaneGarner/rhythm" },
+      { label: "GitHub", href: "https://github.com/LaneGarner/rhythm-fit" },
     ],
   },
   {
