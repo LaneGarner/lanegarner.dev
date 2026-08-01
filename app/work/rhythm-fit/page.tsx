@@ -54,7 +54,7 @@ const RhythmFitCaseStudy = () => {
           <RhythmScreenshot
             id="intake"
             alt="Rhythm Fit review screen for an AI-generated workout plan"
-            caption="Every planning input is reviewable before generation, so changes never require starting over."
+            caption="Rhythm lets users review and edit every planning input before generation."
           />
         </CaseSection>
 
@@ -77,7 +77,7 @@ const RhythmFitCaseStudy = () => {
           <RhythmScreenshot
             id="chat"
             alt="Rhythm Fit AI Coach giving plan-aware progression advice"
-            caption="Answers arrive without moving the scroll position. Reduced motion and one final screen-reader announcement keep chat calm."
+            caption="Rhythm delivers coach answers without moving the scroll position, then announces the final response once."
           />
         </CaseSection>
 
@@ -94,7 +94,7 @@ const RhythmFitCaseStudy = () => {
           <RhythmScreenshot
             id="execution"
             alt="Rhythm Fit workout execution screen"
-            caption="Set completion updates Redux and AsyncStorage immediately. Account sync follows."
+            caption="Rhythm saves completed sets locally first, then syncs the account in the background."
           />
         </CaseSection>
 
@@ -110,7 +110,7 @@ const RhythmFitCaseStudy = () => {
           <RhythmScreenshot
             id="stats"
             alt="Rhythm Fit workout analytics with records, volume, and consistency"
-            caption="PRs, volume trends, muscle balance, and top exercises come directly from workout records."
+            caption="Rhythm turns workout records into PRs, volume trends, muscle balance, and top exercises."
           />
         </CaseSection>
 
@@ -128,7 +128,7 @@ const RhythmFitCaseStudy = () => {
           <RhythmScreenshot
             id="coach-dashboard"
             alt="Rhythm Fit coach dashboard with large labeled controls"
-            caption="Large targets, clear state, AA contrast, and reduced motion support one-handed use."
+            caption="Rhythm uses large targets, clear state, AA contrast, and reduced motion for one-handed use."
           />
         </CaseSection>
 
@@ -143,22 +143,22 @@ const RhythmFitCaseStudy = () => {
             <RhythmScreenshot
               id="calculator"
               alt="Rhythm Fit plate calculator showing a 185-pound barbell setup"
-              caption="Configured barbells and available plates produce a per-side loading plan."
+              caption="Rhythm turns configured barbells and available plates into a per-side loading plan."
             />
             <RhythmScreenshot
               id="superset"
               alt="Rhythm Fit superset execution screen for lateral raises and tricep pushdowns"
-              caption="Superset pairs stay together through weight, reps, and set completion."
+              caption="Rhythm keeps superset pairs together through weight, reps, and set completion."
             />
             <RhythmScreenshot
               id="timer"
               alt="Rhythm Fit workout timer with count-up, countdown, and EMOM modes"
-              caption="Count-up, countdown, and EMOM modes stay within the active workout."
+              caption="Rhythm keeps count-up, countdown, and EMOM timers inside the active workout."
             />
             <RhythmScreenshot
               id="onboarding"
               alt="Rhythm Fit guided onboarding asking about training goals"
-              caption="Guided questions turn goals, schedule, and equipment into planning context."
+              caption="Rhythm turns guided answers about goals, schedule, and equipment into planning context."
             />
           </div>
         </CaseSection>
