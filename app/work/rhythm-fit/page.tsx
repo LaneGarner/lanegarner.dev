@@ -31,8 +31,11 @@ const RhythmFitCaseStudy = () => {
         </p>
       </CaseSection>
 
-      {/* Saved for later: restore GitHubLatestCommit after the security audit
-          is complete and the repository's checks/status are green. */}
+      {/* Latest build note intentionally disabled. Re-enable only after the
+          security audit is complete and repository checks have a clean,
+          green status.
+          <GitHubLatestCommit />
+      */}
 
       <RhythmThemeProvider>
         <RhythmFeatureGallery />
