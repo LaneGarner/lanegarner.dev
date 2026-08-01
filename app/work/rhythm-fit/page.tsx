@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { CaseStudyLayout, CaseSection } from "@/components/site/case-study";
-import { GitHubLatestCommit } from "@/components/site/github-latest-commit";
 import {
   RhythmFeatureGallery,
   RhythmScreenshot,
@@ -37,7 +36,8 @@ const RhythmFitCaseStudy = () => {
         </p>
       </CaseSection>
 
-      <GitHubLatestCommit />
+      {/* Saved for later: restore GitHubLatestCommit after the security audit
+          is complete and the repository's checks/status are green. */}
 
       <RhythmThemeProvider>
         <RhythmFeatureGallery />
