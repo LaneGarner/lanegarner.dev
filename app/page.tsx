@@ -142,12 +142,12 @@ const HomePage = () => {
                 Design tokens and components that survive contact with more
                 than one platform. This site runs on{" "}
                 <a
-                  href="https://github.com/LaneGarner/tutti-ui"
+                  href="https://github.com/LaneGarner/tuttiui"
                   target="_blank"
                   rel="noreferrer"
                   className="font-semibold text-ink underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet"
                 >
-                  tutti-ui
+                  tuttiui
                 </a>
                 , my React + React Native system.
               </SurfaceCardDescription>
@@ -174,10 +174,10 @@ const HomePage = () => {
           A canned exchange, no model behind it. The frontend behavior is
           real: progressive content, explicit state transitions, reduced
           motion, and screen-reader-friendly announcements built with
-          tutti-ui&apos;s AgentWorkflow and StreamingText—the same components
+          tuttiui&apos;s AgentWorkflow and StreamingText—the same components
           documented in the{" "}
           <a
-            href="https://lanegarner.github.io/tutti-ui/"
+            href="https://lanegarner.github.io/tuttiui/"
             target="_blank"
             rel="noreferrer"
             className="font-semibold text-ink underline decoration-accent-cool decoration-2 underline-offset-4 transition-colors hover:text-accent-quiet"

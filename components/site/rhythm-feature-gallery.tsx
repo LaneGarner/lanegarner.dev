@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useTheme } from "@tutti-ui/shared";
+import { useTheme } from "@tuttiui/shared";
 import {
   createContext,
   type ReactNode,

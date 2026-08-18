@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import { ThemeProvider, useTheme } from "@tutti-ui/shared";
+import { ThemeProvider, useTheme } from "@tuttiui/shared";
 
 const STORAGE_KEY = "theme";
 
@@ -31,7 +31,7 @@ interface ThemeChildrenProps {
 }
 
 /**
- * Site theme = tutti-ui's ThemeProvider (system-following, light/dark) plus:
+ * Site theme = tuttiui's ThemeProvider (system-following, light/dark) plus:
  * - persistence to localStorage (read synchronously above, written on change)
  * - syncing the `.dark` class on <html> for Tailwind's class strategy
  * A blocking script in app/layout.tsx sets the initial class pre-paint.

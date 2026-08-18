@@ -8,13 +8,13 @@ import {
   type CardProps,
   type CardTitleProps,
   type CardDescriptionProps,
-} from "@tutti-ui/react";
-import { cn } from "@tutti-ui/shared";
+} from "@tuttiui/react";
+import { cn } from "@tuttiui/shared";
 
 /**
- * Thin wrappers over @tutti-ui/react's Card family that layer the site's
+ * Thin wrappers over @tuttiui/react's Card family that layer the site's
  * dark-theme surface tokens on top (tutti cards are light by default).
- * Everything else (padding, structure, variants) is pure tutti-ui.
+ * Everything else (padding, structure, variants) is pure tuttiui.
  */
 export const SurfaceCard = forwardRef<HTMLDivElement, CardProps>(
   ({ className, ...props }, ref) => {

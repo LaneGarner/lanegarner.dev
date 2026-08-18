@@ -40,10 +40,10 @@ const AboutPage = () => {
           <li>
             Builder of{" "}
             <Link
-              href="/work/tutti-ui"
+              href="/work/tuttiui"
               className="font-semibold underline decoration-accent-cool decoration-2 underline-offset-4 hover:text-accent-quiet"
             >
-              tutti-ui
+              tuttiui
             </Link>
             ,{" "}
             <Link
@@ -115,10 +115,10 @@ const AboutPage = () => {
         <p>
           Outside of work hours I build and ship my own products end-to-end:{" "}
           <Link
-            href="/work/tutti-ui"
+            href="/work/tuttiui"
             className="font-semibold underline decoration-accent-cool decoration-2 underline-offset-4 hover:text-accent-quiet"
           >
-            tutti-ui
+            tuttiui
           </Link>
           , a cross-platform design system (which this site is built with);
           local-first mobile experiences with optional AI coaching (

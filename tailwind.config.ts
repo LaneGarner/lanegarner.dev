@@ -1,10 +1,10 @@
 import type { Config } from "tailwindcss";
-import { tuttiPreset } from "@tutti-ui/react/tailwind";
+import { tuttiPreset } from "@tuttiui/react/tailwind";
 
 /**
  * Theming contract:
  * - tuttiPreset supplies the design-system scales (gray/blue/green/amber/red,
- *   spacing, radii, shadows) that @tutti-ui/react components consume.
+ *   spacing, radii, shadows) that @tuttiui/react components consume.
  * - Site-brand colors are semantic tokens backed by CSS variables defined in
  *   app/globals.css (:root and .dark). Retheme there; components never
  *   hardcode hex values.
@@ -14,7 +14,7 @@ const config: Config = {
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./lib/**/*.{ts,tsx}",
-    "./node_modules/@tutti-ui/react/dist/**/*.{js,mjs}",
+    "./node_modules/@tuttiui/react/dist/**/*.{js,mjs}",
   ],
   // ColorScale's mapped type doesn't structurally match Tailwind's
   // RecursiveKeyValuePair, but the values are identical at runtime.

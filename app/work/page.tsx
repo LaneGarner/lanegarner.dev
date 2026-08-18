@@ -4,7 +4,7 @@ import { WorkGrid } from "@/components/site/work-grid";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Side projects by Lane Garner: tutti-ui, Rhythm Fit, Tribe Tracker, garnerguitar.com, and shedr, each with a case study.",
+    "Side projects by Lane Garner: tuttiui, Rhythm Fit, Tribe Tracker, garnerguitar.com, and shedr, each with a case study.",
 };
 
 const WorkPage = () => {
