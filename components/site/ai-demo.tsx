@@ -52,7 +52,7 @@ const buildSteps = (stage: Stage): WorkflowStep[] => [
 ];
 
 /**
- * Canned tutti-ui AI demo for the home page. Plays a scripted exchange
+ * Canned tuttiui AI demo for the home page. Plays a scripted exchange
  * once the card scrolls into view: the user message is already there, an
  * AgentWorkflow steps through parse / tool call / stream, then
  * StreamingText types out the reply. No network anywhere.

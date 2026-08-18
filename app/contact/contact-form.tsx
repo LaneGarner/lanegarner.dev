@@ -9,10 +9,10 @@ import {
   Label,
   Textarea,
   VStack,
-} from "@tutti-ui/react";
+} from "@tuttiui/react";
 
 /**
- * Contact form built from @tutti-ui/react form primitives.
+ * Contact form built from @tuttiui/react form primitives.
  *
  * Real submissions via Netlify Forms: the hidden form definition lives in
  * public/__forms.html (Netlify's crawler registers it at deploy time); this

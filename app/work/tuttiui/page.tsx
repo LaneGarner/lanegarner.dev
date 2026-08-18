@@ -6,22 +6,22 @@ import { ScreenshotPlaceholder } from "@/components/site/screenshot-placeholder"
 import { getCaseStudy } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
-  title: "tutti-ui: cross-platform design system",
+  title: "tuttiui: cross-platform design system",
   description:
     "Case study: a React + React Native design system with shared tokens, 27/32 native parity, and 600+ tests.",
 };
 
 const TuttiUiCaseStudy = () => {
-  const study = getCaseStudy("tutti-ui");
+  const study = getCaseStudy("tuttiui");
 
   return (
     <CaseStudyLayout study={study}>
       <CaseSection title="Overview">
         <p>
-          tutti-ui is a design system that ships to both React and React
+          tuttiui is a design system that ships to both React and React
           Native from one set of design tokens: colors, spacing, typography,
           radii, and shadows defined once in{" "}
-          <code>@tutti-ui/tokens</code> and consumed by a Tailwind preset on
+          <code>@tuttiui/tokens</code> and consumed by a Tailwind preset on
           web and NativeWind classes on native. The name is a nod to my music
           background: <em>tutti</em> is the score marking for &ldquo;everyone
           plays.&rdquo;
@@ -37,14 +37,14 @@ const TuttiUiCaseStudy = () => {
         <p>
           <strong>This portfolio is built with it</strong>: the buttons,
           cards, tabs, form fields, breadcrumbs, and theme provider on every
-          page are @tutti-ui/react, themed through its Tailwind preset.
+          page are @tuttiui/react, themed through its Tailwind preset.
         </p>
       </CaseSection>
 
       <div className="flex items-center justify-center rounded-card bg-[#ECF6F0] px-8 py-12">
         <Image
           src="/tuttiui-lockup.svg"
-          alt="The tutti-ui logo and wordmark"
+          alt="The tuttiui logo and wordmark"
           width={360}
           height={120}
           unoptimized
@@ -55,7 +55,7 @@ const TuttiUiCaseStudy = () => {
       <CaseSection title="Why cross-platform parity is the hard part">
         <p>
           Most component libraries pick a platform. The interesting problems
-          in tutti-ui came from refusing to: every component needed the same
+          in tuttiui came from refusing to: every component needed the same
           API, the same variants, and the same accessibility guarantees on
           two very different runtimes. A web <code>Select</code> is a native
           popup; on mobile it becomes a trigger plus bottom-sheet modal (same
@@ -66,7 +66,7 @@ const TuttiUiCaseStudy = () => {
         <p>
           The parity work is tracked publicly, component by component, in{" "}
           <a
-            href="https://github.com/LaneGarner/tutti-ui/blob/main/PARITY.md"
+            href="https://github.com/LaneGarner/tuttiui/blob/main/PARITY.md"
             target="_blank"
             rel="noreferrer"
             className="underline decoration-accent-cool decoration-2 underline-offset-4"
@@ -91,7 +91,7 @@ const TuttiUiCaseStudy = () => {
           <TabsContent value="web">
             <pre className="overflow-x-auto rounded-lg bg-chrome p-4 text-sm text-chrome-ink">
               <code>{`// tailwind.config.ts
-import { tuttiPreset } from "@tutti-ui/react/tailwind";
+import { tuttiPreset } from "@tuttiui/react/tailwind";
 
 export default {
   presets: [tuttiPreset],
@@ -99,14 +99,14 @@ export default {
 };
 
 // Anywhere in the app
-import { Button, Card } from "@tutti-ui/react";`}</code>
+import { Button, Card } from "@tuttiui/react";`}</code>
             </pre>
           </TabsContent>
           <TabsContent value="native">
             <pre className="overflow-x-auto rounded-lg bg-chrome p-4 text-sm text-chrome-ink">
               <code>{`// Same tokens, NativeWind classNames
-import { Button, Card } from "@tutti-ui/react-native";
-import { ThemeProvider } from "@tutti-ui/shared";
+import { Button, Card } from "@tuttiui/react-native";
+import { ThemeProvider } from "@tuttiui/shared";
 
 // accessibilityRole / accessibilityState wired in,
 // 27 of 32 families at parity (PARITY.md)`}</code>
@@ -131,9 +131,9 @@ import { ThemeProvider } from "@tutti-ui/shared";
       <CaseSection title="Outcome">
         <p>
           A production design system with a live Storybook, published npm
-          packages (<code>@tutti-ui/react</code>,{" "}
-          <code>@tutti-ui/react-native</code>, <code>@tutti-ui/tokens</code>,{" "}
-          <code>@tutti-ui/shared</code>), and a real consumer:
+          packages (<code>@tuttiui/react</code>,{" "}
+          <code>@tuttiui/react-native</code>, <code>@tuttiui/tokens</code>,{" "}
+          <code>@tuttiui/shared</code>), and a real consumer:
           this site.
         </p>
       </CaseSection>

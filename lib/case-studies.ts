@@ -24,8 +24,8 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "tutti-ui",
-    title: "tutti-ui",
+    slug: "tuttiui",
+    title: "tuttiui",
     tagline: "A cross-platform design system for React and React Native",
     summary:
       "32 accessible component families, one set of design tokens, 27 of 32 ported to React Native, with 600+ tests and a live Storybook. This site is built with it.",
@@ -42,8 +42,8 @@ export const caseStudies: CaseStudy[] = [
       "Jest + Testing Library",
     ],
     links: [
-      { label: "Live Storybook", href: "https://lanegarner.github.io/tutti-ui/" },
-      { label: "GitHub", href: "https://github.com/LaneGarner/tutti-ui" },
+      { label: "Live Storybook", href: "https://lanegarner.github.io/tuttiui/" },
+      { label: "GitHub", href: "https://github.com/LaneGarner/tuttiui" },
     ],
     availability: [{ label: "Available on npm", status: "live" }],
   },

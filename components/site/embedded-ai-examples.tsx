@@ -13,7 +13,7 @@ import {
 import { SurfaceCard } from "@/components/site/surface-card";
 
 /**
- * Static tutti-ui vignettes for the "AI without the chat box" section: the
+ * Static tuttiui vignettes for the "AI without the chat box" section: the
  * three shapes embedded AI takes when it isn't a conversation. Canned data,
  * no model anywhere; the point is the interface, not the inference.
  */

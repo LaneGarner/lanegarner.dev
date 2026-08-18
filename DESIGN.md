@@ -127,12 +127,12 @@ Evolved (positioning only, not aesthetics):
   typing renders the full string, the rotating word renders a static word, CSS
   transitions collapse.
 
-## 5. tutti-ui integration
+## 5. tuttiui integration
 
-- `tailwind.config.ts` applies `tuttiPreset` from `@tutti-ui/react/tailwind`,
+- `tailwind.config.ts` applies `tuttiPreset` from `@tuttiui/react/tailwind`,
   then layers the site tokens (CSS variables) on top. tutti components keep
   their neutral gray/blue scales; site chrome uses the semantic tokens.
-- `darkMode: "class"` per tutti-ui's documented setup; the site ThemeProvider
-  (wrapping `@tutti-ui/shared`'s `ThemeProvider`) syncs the `.dark` class,
+- `darkMode: "class"` per tuttiui's documented setup; the site ThemeProvider
+  (wrapping `@tuttiui/shared`'s `ThemeProvider`) syncs the `.dark` class,
   follows the system, persists manual choice to localStorage. That is the
   exact behavior of the old Gatsby `ThemeContext`.

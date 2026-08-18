@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn, useTheme } from "@tutti-ui/shared";
+import { cn, useTheme } from "@tuttiui/shared";
 import { Logo } from "./logo";
 
 const NAV_ITEMS = [

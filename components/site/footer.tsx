@@ -35,12 +35,12 @@ export const SiteFooter = () => {
           </a>{" "}
           and{" "}
           <a
-            href="https://github.com/LaneGarner/tutti-ui"
+            href="https://github.com/LaneGarner/tuttiui"
             target="_blank"
             rel="noreferrer"
             className="text-chrome-ink underline decoration-accent-cool transition-colors hover:text-accent"
           >
-            tutti-ui
+            tuttiui
           </a>
           .
         </span>
