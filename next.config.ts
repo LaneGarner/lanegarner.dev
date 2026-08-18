@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/groceryrun",
+        destination: "https://grocery-run-nine.vercel.app",
+        permanent: false,
+      },
+      {
         source: "/skills/playground",
         destination:
           "https://github.com/LaneGarner/skills/tree/main/skills/pedalplayground",
